@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Bitter", serif;
+  background-color: #EDF5F5;
+} 
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+p {
+  margin-bottom: 15px;
+}
+a {
+  color: #8f0e3d;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Bitter", serif;
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Bitter", serif;
+  font-weight: 300; /* light */
+  font-style: italic;
+}
+
+.site-title {
+  font-size: 2rem;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 700;
+  color: #222222;
+}
+
+@media (max-width: 600px) {
+  .site-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Header / Navigation */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  transition: background .2s ease, border-color .2s ease;
+}
+.site-header.hide-header-bg {
+  background: transparent !important;
+  border-bottom-color: transparent !important;
+}
+.nav-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.back-link-container {
+  margin-top: 20px;
+}
+.brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #222222;
+}
+.site-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+.site-nav a {
+  color: #8f0e3d;
+  text-transform: lowercase;
+  padding: 6px 8px;
+}
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+/* About section: image + text */
+.about-section {
+  max-width: 900px;
+  margin: 24px auto;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 16px;
+}
+.about-image-wrapper {
+  flex: 0 0 140px;
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.about-heading {
+  font-size: 1.4rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  color: #222222;
+}
+.about-text p {
+  margin: 0;
+}
+/* Extra spacing specifically between the about paragraph and the ratings */
+.about-ratings {
+  margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image-wrapper {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 12px;
+  }
+}
+
+/* Order / taxonomy dropdown */
+.order-section {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 16px;
+}
+/* space between sibling order blocks */
+.order-details + .order-details {
+  margin-top: 20px;
+}
+.order-details summary {
+  cursor: pointer;
+  list-style: none;
+}
+.order-summary h1 {
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: 700;
+}
+.order-summary::-webkit-details-marker,
+.family-summary::-webkit-details-marker {
+  display: none;
+}
+.order-summary::after {
+  content: '▾';
+  float: right;
+  transition: transform .2s ease;
+}
+.order-details[open] .order-summary::after {
+  transform: rotate(180deg);
+}
+.order-details[open] .order-summary h1 {
+  color: inherit;
+}
+.order-content {
+  margin-top: 12px;
+}
+.family-details summary {
+  cursor: pointer;
+  display: block;
+  padding: 8px 0;
+  font-weight: 600;
+}
+.family-summary .subtext {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #666666;
+  margin-top: 4px;
+}
+.family-summary::after {
+  content: '▾';
+  float: right;
+  transition: transform .15s ease;
+}
+.family-details[open] .family-summary::after {
+  transform: rotate(180deg);
+}
+.species-list {
+  list-style: none;
+  padding-left: 12px;
+  margin-top: 8px;
+}
+.species-list li {
+  margin-bottom: 6px;
+}
+.species-list a {
+  color: #8f0e3d;
+  text-decoration: none;
+}
+.species-list a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .order-summary h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Species page styles */
+.species-page {
+  max-width: 700px;
+  margin: 24px auto;
+  padding: 16px;
+}
+.species-hero {
+  display: block;
+  margin-bottom: 16px;
+}
+.species-hero .species-info h1 {
+  font-size: 1.6rem;
+  margin: 0 0 6px 0;
+}
+.species-info .latin {
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  margin: 0 0 10px 0;
+  color: #666666;
+}
+.species-media {
+  text-align: center;
+  margin: 12px 0;
+}
+.species-media img {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+.lead {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.back-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #8f0e3d;
+  text-decoration: none;
+}
+.blog-content p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.species-section {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #eeeeee;
+}
+/* Remove divider before first section to keep content continuous */
+.blog-content .species-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+.species-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+/* Ratings */
+.ratings {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0 28px 0;
+}
+.rating-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+.rating-label {
+  font-weight: 600;
+  margin: 0;
+}
+.stars {
+  display: inline-flex;
+  gap: 6px;
+}
+.star {
+  font-size: 1.2rem;
+  color: #ddd;
+  padding: 0 6px 0 0;
+  display: inline-block;
+  line-height: 1;
+}
+.star.filled {
+  color: #8f0e3d;
+}
+.note-box {
+  border: none;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  color: #333;
+  margin: 0 0 12px 0; /* add spacing below note */
+}
+.location-line {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  font-weight: 600;
+}
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: 1.2rem;
+  color: #8f0e3d;
+}
+
+/* Visually hidden helper for screen readers */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 700px) {
+  .species-info h1 {
+    font-size: 1.4rem;
+  }
+}
