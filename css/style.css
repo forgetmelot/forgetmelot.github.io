@@ -185,8 +185,10 @@ h2 {
 }
 .family-details summary {
   cursor: pointer;
+  position: relative;
   display: block;
   padding: 8px 0;
+  padding-right: 36px; /* reserve space for arrow */
   font-weight: 600;
 }
 .family-summary .subtext {
@@ -198,7 +200,9 @@ h2 {
 }
 .family-summary::after {
   content: '▾';
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
   transition: transform .15s ease;
 }
 .family-details[open] .family-summary::after {
