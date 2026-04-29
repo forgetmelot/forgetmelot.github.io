@@ -224,6 +224,13 @@ h2 {
   text-decoration: underline;
 }
 
+/* Similar species lists in blog content should use bullets */
+.blog-content .species-section .species-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
 @media (max-width: 600px) {
   .order-summary h1 {
     font-size: 1.2rem;
@@ -248,6 +255,13 @@ h2 {
   font-size: 1rem;
   font-weight: 300;
   font-style: italic;
+  margin: 0 0 10px 0;
+  color: #666666;
+}
+.species-info .other-names {
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: normal;
   margin: 0 0 10px 0;
   color: #666666;
 }
@@ -282,6 +296,11 @@ h2 {
   padding-top: 12px;
   border-top: 1px solid #eeeeee;
 }
+
+/* Ensure consistent spacing after "Sounds" sections across species pages */
+.blog-content .species-section {
+  margin-bottom: 44px;
+}
 /* Remove divider before first section to keep content continuous */
 .blog-content .species-section:first-of-type {
   border-top: none;
@@ -309,8 +328,10 @@ h2 {
   border-radius: 0;
 }
 .rating-label {
-  font-weight: 600;
-  margin: 0;
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222222;
 }
 .stars {
   display: inline-flex;
@@ -335,7 +356,7 @@ h2 {
   margin: 0 0 12px 0; /* add spacing below note */
 }
 .location-line {
-  margin-top: 6px;
+  margin: 6px 0 15px 0;
   display: flex;
   align-items: center;
   gap: 8px;

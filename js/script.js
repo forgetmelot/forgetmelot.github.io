@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', onScroll, { passive: true });
   })();
 
+  // (removed) previously added code to tag "Sounds" sections is no longer needed
+
   // Lucky link: parse index.html to auto-discover bird pages, no manifest needed
   (function () {
     var luckyLink = document.querySelector('a.lucky');
@@ -107,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var resultsEl = document.getElementById('search-results');
     if (!input || !resultsEl) return;
 
-    // entries: { file: 'asian-koel.html', title: 'Asian Koel', scientific: 'Eudynamys scolopaceus' }
+    // entries: { file: 'asian-koel.html', title: 'Asian Koel', scientific: 'Eudynamys scolopaceus', otherNames: '...' }
     var entries = [];
 
     function toTitleFromFilename(file) {
@@ -115,6 +117,13 @@ document.addEventListener('DOMContentLoaded', function () {
       return name.split('-').map(function (part) {
         return part ? part.charAt(0).toUpperCase() + part.slice(1) : part;
       }).join(' ');
+    }
+
+    function normalizeSearchText(value) {
+      return (value || '')
+        .toLowerCase()
+        .replace(/[-\s]+/g, '')
+        .trim();
     }
 
     function buildEntriesFromIndex() {
@@ -125,7 +134,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var file = href.split('/').pop();
         var title = (a.textContent || '').trim();
         var scientific = a.getAttribute('data-scientific') || '';
-        if (file && title) list.push({ file: file, title: title, scientific: scientific });
+        var otherNames = a.getAttribute('data-other-names') || '';
+        if (file && title) list.push({ file: file, title: title, scientific: scientific, otherNames: otherNames });
       });
       return list;
     }
@@ -142,13 +152,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function onSearch() {
-      var q = (input.value || '').toLowerCase().trim();
+      var q = normalizeSearchText(input.value || '');
       if (!q) { renderResults([], ''); return; }
       var matches = entries.filter(function (e) {
-        var titleMatch = e.title.toLowerCase().indexOf(q) !== -1;
-        var fileMatch = e.file.toLowerCase().indexOf(q) !== -1;
-        var scientificMatch = e.scientific && e.scientific.toLowerCase().indexOf(q) !== -1;
-        return titleMatch || fileMatch || scientificMatch;
+        var titleMatch = normalizeSearchText(e.title).indexOf(q) !== -1;
+        var fileMatch = normalizeSearchText(e.file).indexOf(q) !== -1;
+        var scientificMatch = e.scientific && normalizeSearchText(e.scientific).indexOf(q) !== -1;
+        var otherNamesMatch = e.otherNames && normalizeSearchText(e.otherNames).indexOf(q) !== -1;
+        return titleMatch || fileMatch || scientificMatch || otherNamesMatch;
       });
       renderResults(matches, q);
     }
