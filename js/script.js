@@ -48,6 +48,40 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', onScroll, { passive: true });
   })();
 
+  // Internal links to missing pages should land on the site 404 page.
+  (function () {
+    var isBirdPage = window.location.pathname.indexOf('/birds/') !== -1;
+    var missingPagePath = isBirdPage ? '../404.html' : '404.html';
+
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a[href]');
+      if (!link || link.classList.contains('lucky')) return;
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      var href = link.getAttribute('href') || '';
+      if (!href || href.indexOf('.html') === -1) return;
+
+      var resolvedUrl;
+      try {
+        resolvedUrl = new URL(href, window.location.href);
+      } catch (_) {
+        return;
+      }
+
+      if (resolvedUrl.origin !== window.location.origin) return;
+
+      e.preventDefault();
+
+      fetch(resolvedUrl.href, { method: 'HEAD' })
+        .then(function (res) {
+          window.location.href = res.ok ? resolvedUrl.href : missingPagePath;
+        })
+        .catch(function () {
+          window.location.href = missingPagePath;
+        });
+    }, true);
+  })();
+
   // (removed) previously added code to tag "Sounds" sections is no longer needed
 
   // Lucky link: parse index.html to auto-discover bird pages, no manifest needed
@@ -55,10 +89,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var luckyLink = document.querySelector('a.lucky');
     if (!luckyLink) return;
 
+    var indexPagePath = window.location.pathname.indexOf('/birds/') !== -1 ? '../index.html' : 'index.html';
+
     function pickRandomAndGo(pages) {
       if (!pages || !pages.length) return;
       var target = pages[Math.floor(Math.random() * pages.length)];
-      window.location.href = target;
+      var prefix = window.location.pathname.indexOf('/birds/') !== -1 ? '../' : '';
+      window.location.href = prefix + target;
     }
 
     function extractPagesFromHTML(htmlText) {
@@ -80,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
     luckyLink.addEventListener('click', function (e) {
       e.preventDefault();
       // Fetch index.html and parse species links
-      fetch('index.html')
+      fetch(indexPagePath)
         .then(function (res) { return res.text(); })
         .then(function (text) {
           var pages = extractPagesFromHTML(text);
