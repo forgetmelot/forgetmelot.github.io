@@ -140,6 +140,38 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   })();
 
+  function isBirdPage() {
+    return window.location.pathname.indexOf('/birds/') !== -1;
+  }
+
+  function getIndexPagePath() {
+    return isBirdPage() ? '../index.html' : 'index.html';
+  }
+
+  function buildSearchMarkup() {
+    return [
+      '<section class="search-section search-section--header" aria-label="Search birds by species name or scientific name">',
+      '  <div class="search-container">',
+      '    <label for="bird-search" class="sr-only">Search bird pages</label>',
+      '    <input id="bird-search" class="search-input" type="search" placeholder="Search by species or scientific name (e.g. heron, Ardea)" autocomplete="off" aria-describedby="search-help">',
+      '    <p id="search-help" class="search-help sr-only">Search by species name, scientific name, or other common names.</p>',
+      '  </div>',
+      '  <div id="search-results" class="search-results" aria-live="polite" aria-relevant="additions removals"></div>',
+      '</section>'
+    ].join('');
+  }
+
+  (function () {
+    if (!isBirdPage()) return;
+
+    var headerEl = document.querySelector('.site-header');
+    if (!headerEl || document.getElementById('bird-search')) return;
+
+    var wrapper = document.createElement('div');
+    wrapper.innerHTML = buildSearchMarkup();
+    headerEl.appendChild(wrapper.firstElementChild);
+  })();
+
   // Search by species name and scientific name
   (function () {
     var input = document.getElementById('bird-search');
@@ -163,8 +195,8 @@ document.addEventListener('DOMContentLoaded', function () {
         .trim();
     }
 
-    function buildEntriesFromIndex() {
-      var anchors = document.querySelectorAll('.species-list a[href^="birds/"]');
+    function buildEntriesFromDocument(doc) {
+      var anchors = doc.querySelectorAll('.species-list a[href^="birds/"]');
       var list = [];
       anchors.forEach(function (a) {
         var href = a.getAttribute('href') || '';
@@ -177,11 +209,35 @@ document.addEventListener('DOMContentLoaded', function () {
       return list;
     }
 
+    function buildFallbackEntries() {
+      var files = [
+        'asian-koel.html','asian-tit.html','black-collared-starling.html','black-crowned-night-heron.html','black-drongo.html','black-winged-stilt.html','blue-whistling-thrush.html','blue-winged-minla.html','chinese-blackbird.html','cinnamon-bittern.html','collared-crow.html','common-greenshank.html','common-myna.html','common-sandpiper.html','common-tailorbird.html','common-tern.html','crested-myna.html','eurasian-tree-sparrow.html','great-barbet.html','great-egret.html','greater-coucal.html','greater-white-fronted-goose.html','hair-crested-drongo.html','house-swift.html','large-billed-crow.html','light-vented-bulbul.html','little-egret.html','little-heron.html','long-tailed-shrike.html','masked-laughingthrush.html','oriental-magpie-robin.html','ornate-sunbird.html','pacific-reef-heron.html','plain-prinia.html','red-billed-blue-magpie.html','red-whiskered-bulbul.html','redpoll.html','ruddy-shelduck.html','scaly-breasted-munia.html','sooty-headed-bulbul.html','spotted-dove.html','swinhoes-white-eye.html','velvet-fronted-nuthatch.html','white-breasted-waterhen.html','white-rumped-munia.html','white-shouldered-starling.html','wood-sandpiper.html','yellow-bellied-prinia.html','yellow-crested-cockatoo.html'
+      ];
+
+      return files.map(function (file) {
+        return { file: file, title: toTitleFromFilename(file), scientific: '', otherNames: '' };
+      });
+    }
+
+    function fetchEntriesFromIndex() {
+      return fetch(getIndexPagePath())
+        .then(function (res) { return res.text(); })
+        .then(function (text) {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(text, 'text/html');
+          return buildEntriesFromDocument(doc);
+        })
+        .catch(function () {
+          return [];
+        });
+    }
+
     function renderResults(list, query) {
       if (!query) { resultsEl.innerHTML = ''; return; }
       if (!list.length) { resultsEl.innerHTML = '<div class="search-empty">No matches found.</div>'; return; }
+      var resultPrefix = isBirdPage() ? '' : 'birds/';
       var html = '<ul class="search-list">' + list.map(function (e) {
-        var path = 'birds/' + e.file;
+        var path = resultPrefix + e.file;
         var scientificLabel = e.scientific ? ' <span class="scientific-label">(' + e.scientific + ')</span>' : '';
         return '<li class="search-item"><a href="' + path + '">' + e.title + scientificLabel + '</a></li>';
       }).join('') + '</ul>';
@@ -201,19 +257,27 @@ document.addEventListener('DOMContentLoaded', function () {
       renderResults(matches, q);
     }
 
-    // Prefer extracting titles from the index page’s species lists
-    entries = buildEntriesFromIndex();
-
-    if (entries.length) {
-      input.addEventListener('input', onSearch);
-    } else {
-      // Fallback: derive titles from a static list (no manifest dependency)
-      var files = [
-        'asian-koel.html','asian-tit.html','black-collared-starling.html','black-crowned-night-heron.html','black-drongo.html','black-winged-stilt.html','blue-whistling-thrush.html','blue-winged-minla.html','chinese-blackbird.html','cinnamon-bittern.html','collared-crow.html','common-greenshank.html','common-myna.html','common-sandpiper.html','common-tailorbird.html','common-tern.html','crested-myna.html','eurasian-tree-sparrow.html','great-barbet.html','great-egret.html','greater-coucal.html','greater-white-fronted-goose.html','hair-crested-drongo.html','house-swift.html','large-billed-crow.html','light-vented-bulbul.html','little-egret.html','little-heron.html','long-tailed-shrike.html','masked-laughingthrush.html','oriental-magpie-robin.html','ornate-sunbird.html','pacific-reef-heron.html','plain-prinia.html','red-billed-blue-magpie.html','red-whiskered-bulbul.html','redpoll.html','ruddy-shelduck.html','scaly-breasted-munia.html','sooty-headed-bulbul.html','spotted-dove.html','swinhoes-white-eye.html','velvet-fronted-nuthatch.html','white-breasted-waterhen.html','white-rumped-munia.html','white-shouldered-starling.html','wood-sandpiper.html','yellow-bellied-prinia.html','yellow-crested-cockatoo.html'
-      ];
-      entries = files.map(function (f) { return { file: f, title: toTitleFromFilename(f), scientific: '' }; });
+    function activateSearch() {
       input.addEventListener('input', onSearch);
     }
+
+    entries = buildEntriesFromDocument(document);
+
+    if (entries.length) {
+      activateSearch();
+      return;
+    }
+
+    if (isBirdPage()) {
+      fetchEntriesFromIndex().then(function (fetchedEntries) {
+        entries = fetchedEntries.length ? fetchedEntries : buildFallbackEntries();
+        activateSearch();
+      });
+      return;
+    }
+
+    entries = buildFallbackEntries();
+    activateSearch();
   })();
 
 });

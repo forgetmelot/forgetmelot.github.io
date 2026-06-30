@@ -51,6 +51,7 @@ h2 {
 
 /* Header / Navigation */
 .site-header {
+  display: block;
   background: #ffffff;
   border-bottom: 1px solid #e6e6e6;
   transition: background .2s ease, border-color .2s ease;
@@ -87,6 +88,21 @@ h2 {
 }
 .site-nav a:hover {
   text-decoration: underline;
+}
+
+.search-section--header {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px 16px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.search-section--header .search-container {
+  gap: 6px;
+}
+
+.search-section--header .search-input {
+  width: 100%;
 }
 
 /* About section: image + text */
