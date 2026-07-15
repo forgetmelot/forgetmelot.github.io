@@ -1,0 +1,237 @@
+order,family,species,scientific_name,other_name
+Anseriformes,Anatidae,Greater White Fronted Goose,Anser albifrons,
+Anseriformes,Anatidae,Tundra Bean-Goose,Anser serrirostris,
+Anseriformes,Anatidae,Brant,Branta bernicla,Brent Goose
+Anseriformes,Anatidae,Barnacle Goose,Branta leucopsis,
+Anseriformes,Anatidae,Canada Goose,Branta canadensis,
+Anseriformes,Anatidae,Mute Swan,Cygnus olor,
+Anseriformes,Anatidae,Black Swan,Cygnus atratus,
+Anseriformes,Anatidae,Ruddy Shelduck,Tadorna ferruginea,
+Anseriformes,Anatidae,Common Shelduck,Tadorna tadorna,
+Anseriformes,Anatidae,Muscovy Duck,Cairina moschata,
+Anseriformes,Anatidae,Mandarin Duck,Aix galericulata,
+Anseriformes,Anatidae,Maned Duck,Chenonetta jubata,
+Anseriformes,Anatidae,Northern Shoveler,Spatula clypeata,
+Anseriformes,Anatidae,Eurasian Wigeon,Mareca penelope,
+Anseriformes,Anatidae,Chiloe Wigeon,Mareca sibilatrix,
+Anseriformes,Anatidae,Mallard,Anas platyrhynchos,
+Anseriformes,Anatidae,Northern Pintail,Anas acuta,
+Anseriformes,Anatidae,Green-Winged Teal,Anas crecca,
+Anseriformes,Anatidae,Marbled Duck,Marmaronetta angustirostris,
+Anseriformes,Anatidae,Common Pochard,Aythya ferina,
+Anseriformes,Anatidae,Tufted Duck,Aythya fuligula,
+Anseriformes,Anatidae,Greater Scaup,Aythya marila,
+Anseriformes,Anatidae,Common Eider,Somateria mollissima,
+Anseriformes,Anatidae,Harlequin Duck,Histrionicus histrionicus,
+Anseriformes,Anatidae,Red-Breasted Merganser,Mergus serrator,
+
+
+
+
+Suliformes,Phalacrocoracidae,Great Cormorant,Phalacrocorax carbo,
+
+Podicipediformes,Podicipedidae,Little Grebe,Tachybaptus ruficollis,
+Podicipediformes,Podicipedidae,Red-Necked Grebe,Podiceps grisegena,
+Podicipediformes,Podicipedidae,Eared Grebe,Podiceps nigricollis,Black-Necked Grebe
+
+
+
+Charadriiformes,Laridae,Slender-Billed Gull,Chroicocephalus genei,
+Charadriiformes,Laridae,Audouin's Gull,Ichthyaetus audouinii,
+Charadriiformes,Laridae,Mediterranean Gull,Ichthyaetus melanocephalus,
+Charadriiformes,Laridae,Caspian Gull,Larus cachinnans,
+Charadriiformes,Laridae,European Herring Gull,Larus argentatus,
+Charadriiformes,Laridae,Yellow-Legged Gull,Larus michahellis,
+Charadriiformes,Laridae,Glaucous Gull,Larus hyperboreus,
+Charadriiformes,Laridae,Lesser Black-Backed Gull,Larus fuscus,
+Charadriiformes,Laridae,Gull-Billed Tern,Gelochelidon nilotica,
+Charadriiformes,Laridae,Black Tern,Chlidonias niger,
+Charadriiformes,Laridae,Arctic Tern,Sterna paradisaea,
+Charadriiformes,Laridae,Common Tern,Sterna hirundo,
+Charadriiformes,Laridae,Black-Naped Tern,Sterna sumatrana,
+Charadriiformes,Laridae,Roseate Tern,Sterna dougallii,
+Charadriiformes,Laridae,Sandwich Tern,Thalasseus sandvicensis,
+Charadriiformes,Laridae,Great Crested Tern,Thalasseus bergii,
+
+
+Charadriiformes,Recurvirostridae,Black-Winged Stilt,Himantopus himantopus,
+Charadriiformes,Charadriidae,Greater Sand-Plover,Anarhynchus leschenaultii,
+Charadriiformes,Charadriidae,Kentish Plover,Anarhynchus alexandrinus,
+Charadriiformes,Scolopacidae,Common Sandpiper,Actitis hypoleucos,
+Charadriiformes,Scolopacidae,Green Sandpiper,Tringa ochropus,
+Charadriiformes,Scolopacidae,Wood Sandpiper,Tringa glareola,
+Charadriiformes,Scolopacidae,Common Greenshank,Tringa nebularia,
+
+
+Gruiformes,Gruidae,Common Crane,Grus grus,
+Gruiformes,Rallidae,White-Breasted Waterhen,Amaurornis phoenicurus,
+Gruiformes,Rallidae,Eurasian Coot,Fulica atra,
+
+
+
+
+Columbiformes,Columbidae,Rock Pigeon,Columba livia,
+Columbiformes,Columbidae,Common Wood-Pigeon,Columba palumbus,
+Columbiformes,Columbidae,Stock Dove,Columba oenas,
+Columbiformes,Columbidae,European Turtle-Dove,Streptopelia turtur,
+Columbiformes,Columbidae,Spotted Dove,Spilopelia chinensis,
+Columbiformes,Columbidae,Laughing Dove,Spilopelia senegalensis,
+
+Galliformes,Phasianidae,Ring-Necked Pheasant,Phasianus colchicus,
+
+
+Cuculiformes,Cuculidae,Greater Coucal,Centropus sinensis,
+Cuculiformes,Cuculidae,Asian Koel,Eudynamys scolopaceus,
+Cuculiformes,Cuculidae,Common Cuckoo,Cuculus canorus,
+
+
+
+
+
+Pelecaniformes,Ardeidae,Black-Crowned Night Heron,Nycticorax nycticorax,
+Pelecaniformes,Ardeidae,Little Egret,Egretta garzetta,
+Pelecaniformes,Ardeidae,Pacific Reef-Heron,Egretta sacra,
+Pelecaniformes,Ardeidae,Great Egret,Ardea alba,
+Pelecaniformes,Ardeidae,Grey Heron,Ardea cinerea,
+Pelecaniformes,Ardeidae,Western Cattle Egret,Ardea ibis,
+Pelecaniformes,Ardeidae,Cinnamon Bittern,Botaurus cinnamomeus,
+Pelecaniformes,Ardeidae,Little Heron,Butorides atricapilla,
+Pelecaniformes,Threskiornithidae,Glossy Ibis,Plegadis falcinellus,
+
+
+
+Accipitriformes,Accipitridae,Black Kite,Milvus migrans,
+Accipitriformes,Accipitridae,Common Buzzard,Buteo buteo,
+Strigiformes,Tytonidae,Western Barn Owl,Tyto alba,
+Strigiformes,Strigidae,Tawny Owl,Strix aluco,
+Coraciiformes,Alcedinidae,Common Kingfisher,Alcedo atthis,
+Coraciiformes,Alcedinidae,White-Throated Kingfisher,Halcyon smyrnensis,
+Coraciiformes,Alcedinidae,Pied Kingfisher,Ceryle rudis,
+
+Apodiformes,Apodidae,Common Swift,Apus apus,
+Apodiformes,Apodidae,Pallid Swift,Apus pallidus,
+Apodiformes,Apodidae,Little Swift,Apus affinis,
+Apodiformes,Apodidae,House Swift,Apus nipalensis,
+
+
+Bucerotiformes,Upupidae,Common Hoopoe,Upupa epops,
+
+Psittaciformes,Cacatuidae,Yellow-Crested Cockatoo,Cacatua sulphurea,
+Psittaciformes,Psittaculidae,Rose-Ringed Parakeet,Psittacula krameri,
+Psittaciformes,Psittaculidae,Monk Parakeet,Myiopsitta monachus,
+Psittaciformes,Psittaculidae,Red-Masked Parakeet,Psittacara erythrogenys,
+
+
+Piciformes,Megalaimidae,Great Barbet,Psilopogon virens,
+
+Passeriformes,Laniidae,Red-Backed Shrike,Lanius collurio,
+Passeriformes,Laniidae,Long-Tailed Shrike,Lanius schach,
+Passeriformes,Laniidae,Great Grey Shrike,Lanius excubitor,
+Passeriformes,Laniidae,Woodchat Shrike,Lanius senator,
+
+Passeriformes,Panuridae,Bearded Reedling,Panurus biarmicus,
+Passeriformes,Leiothrichidae,Masked Laughingthrush,Pterorhinus perspicillatus,
+Passeriformes,Leiothrichidae,Blue-Winged Minla,Actinodura cyanouroptera,
+Passeriformes,Leiothrichidae,Silver-Eared Mesia,Leiothrix argentauris,
+
+Passeriformes,Muscicapidae,Oriental Magpie-Robin,Copsychus saularis,
+Passeriformes,Muscicapidae,Blue Whistling-Thrush,Myophonus caeruleus,
+Passeriformes,Muscicapidae,Moussier's Redstart,Phoenicurus moussieri,
+Passeriformes,Muscicapidae,Common Redstart,Phoenicurus phoenicurus,
+Passeriformes,Muscicapidae,Black Redstart,Phoenicurus ochruros,
+Passeriformes,Muscicapidae,European Pied Flycatcher,Ficedula hypoleuca,
+
+Passeriformes,Zosteropidae,Swinhoe's White-Eye,Zosterops simplex,
+
+Passeriformes,Sylviidae,Eurasian Blackcap,Sylvia atricapilla,
+Passeriformes,Sylviidae,Garden Warbler,Sylvia borin,
+Passeriformes,Sylviidae,African Desert Warbler,Curruca deserti,
+Passeriformes,Sylviidae,Sardinian Warbler,Curruca melanocephala,
+Passeriformes,Sylviidae,Greater Whitethroat,Curruca communis,
+Passeriformes,Sylviidae,Dartford Warbler,Curruca undata,
+
+
+
+
+Passeriformes,Phylloscopidae,Wood Warbler,Phylloscopus sibilatrix,
+
+Passeriformes,Cisticolidae,Plain Prinia,Prinia inornata,
+Passeriformes,Cisticolidae,Yellow-Bellied Prinia,Prinia flaviventris,
+Passeriformes,Cisticolidae,Common Tailorbird,Orthotomus sutorius,
+Passeriformes,Cisticolidae,Zitting Cisticola,Cisticola juncidis,
+Passeriformes,Nectariniidae,Ornate Sunbird,Cinnyris ornatus,
+
+Passeriformes,Turdidae,Mistle Thrush,Turdus viscivorus,
+Passeriformes,Turdidae,Song Thrush,Turdus philomelos,
+Passeriformes,Turdidae,Chinese Blackbird,Turdus mandarinus,
+Passeriformes,Turdidae,Redwing,Turdus iliacus,
+Passeriformes,Turdidae,Eurasian Blackbird,Turdus merula,
+Passeriformes,Turdidae,Fieldfare,Turdus pilaris,
+Passeriformes,Turdidae,Ring Ouzel,Turdus torquatus,
+
+Passeriformes,Dicruridae,Black Drongo,Dicrurus macrocercus,
+Passeriformes,Dicruridae,Hair-Crested Drongo,Dicrurus hottentottus,
+
+Passeriformes,Pycnonotidae,Light-Vented Bulbul,Pycnonotus sinensis,
+Passeriformes,Pycnonotidae,Common Bulbul,Pycnonotus barbatus,
+Passeriformes,Pycnonotidae,Red-Whiskered Bulbul,Pycnonotus jocosus,
+Passeriformes,Pycnonotidae,Sooty-Headed Bulbul,Pycnonotus aurigaster,
+
+Passeriformes,Paridae,Asian Tit,Parus cinereus,
+
+Passeriformes,Certhiidae,Eurasian Treecreeper,Certhia familiaris,
+
+Passeriformes,Sittidae,Velvet-Fronted Nuthatch,Sitta frontalis,
+Passeriformes,Sittidae,Eurasian Nuthatch,Sitta europaea,
+
+Passeriformes,Fringillidae,Common Chaffinch,Fringilla coelebs,
+Passeriformes,Fringillidae,African Chaffinch,Fringilla spodiogenys,
+Passeriformes,Fringillidae,Eurasian Linnet,Linaria cannabina,
+Passeriformes,Fringillidae,Redpoll,Acanthis flammea,
+Passeriformes,Fringillidae,Red Crossbill,Loxia curvirostra,
+Passeriformes,Fringillidae,European Serin,Serinus serinus,
+
+Passeriformes,Regulidae,Goldcrest,Regulus regulus,
+Passeriformes,Regulidae,Common Firecrest,Regulus ignicapilla,
+
+Passeriformes,Troglodytidae,Eurasian Wren,Troglodytes troglodytes,
+Passeriformes,Acrocephalidae,Common Reed Warbler,Acrocephalus scirpaceus,
+Passeriformes,Cettiidae,Cetti's Warbler,Cettia cetti,
+Passeriformes,Estrildidae,Scaly-Breasted Munia,Lonchura punctulata,
+Passeriformes,Estrildidae,White-Rumped Munia,Lonchura striata,
+
+Passeriformes,Motacillidae,Grey Wagtail,Motacilla cinerea,
+Passeriformes,Motacillidae,Western Yellow Wagtail,Motacilla flava,
+Passeriformes,Motacillidae,White Wagtail,Motacilla alba,
+Passeriformes,Motacillidae,Meadow Pipit,Anthus pratensis,
+
+Passeriformes,Sturnidae,Spotless Starling,Sturnus unicolor,
+Passeriformes,Sturnidae,Black-Collared Starling,Gracupica nigricollis,
+Passeriformes,Sturnidae,White-Shouldered Starling,Sturnia sinensis,
+Passeriformes,Sturnidae,Common Myna,Acridotheres tristis,
+Passeriformes,Sturnidae,Crested Myna,Acridotheres cristatellus,
+
+
+Passeriformes,Passeridae,House Sparrow,Passer domesticus,
+Passeriformes,Passeridae,Desert Sparrow,Passer simplex,
+Passeriformes,Passeridae,Eurasian Tree Sparrow,Passer montanus,
+
+
+Passeriformes,Corvidae,Eurasian Jay,Garrulus glandarius,
+Passeriformes,Corvidae,Red-Billed Blue Magpie,Urocissa erythroryncha,
+Passeriformes,Corvidae,Maghreb Magpie,Pica mauritanica,
+Passeriformes,Corvidae,Eurasian Magpie,Pica pica,
+Passeriformes,Corvidae,Red-Billed Chough,Pyrrhocorax pyrrhocorax,
+Passeriformes,Corvidae,Yellow-Billed Chough,Pyrrhocorax graculus,
+Passeriformes,Corvidae,Eurasian Jackdaw,Coloeus monedula,
+Passeriformes,Corvidae,Rook,Corvus frugilegus,
+Passeriformes,Corvidae,Carrion Crow,Corvus corone,
+Passeriformes,Corvidae,Hooded Crow,Corvus cornix,
+Passeriformes,Corvidae,Large-Billed Crow,Corvus macrorhynchos,
+Passeriformes,Corvidae,Collared Crow,Corvus torquatus,
+Passeriformes,Corvidae,Brown-Necked Raven,Corvus ruficollis,
+Passeriformes,Corvidae,Common Raven,Corvus corax,
+
+Passeriformes,Emberizidae,Corn Bunting,Emberiza calandra,
+Passeriformes,Emberizidae,Rock Bunting,Emberiza cia,
+Passeriformes,Emberizidae,House Bunting,Emberiza sahari,

@@ -1,492 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>birds</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/jpeg" sizes="32x32" href="images/me-favicon.png">
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
-<body>
-  <header class="site-header">
-    <div class="nav-container">
-      <a class="brand" href="index.html">forget me lot birding</a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="me.html">about me</a></li>
-          <li><a href="index.html" class="lucky">i'm feeling lucky</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <h1 class="site-title">an incomplete encyclopaedia of birds</h1>
-    <section class="search-section" aria-label="Search birds by species name or scientific name">
-      <div class="search-container">
-        <label for="bird-search" class="sr-only">Search bird pages</label>
-        <input id="bird-search" class="search-input" type="search" placeholder="Search by species or scientific name (e.g. heron, Ardea)" autocomplete="off" aria-describedby="search-help">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/jpeg"
+      sizes="32x32"
+      href="images/me-favicon.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-container">
+        <a class="brand" href="index.html">forget me lot birding</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="me.html">about me</a></li>
+            <li><a href="index.html" class="lucky">i'm feeling lucky</a></li>
+          </ul>
+        </nav>
       </div>
-      <div id="search-results" class="search-results" aria-live="polite" aria-relevant="additions removals"></div>
-    </section>
-    <section class="order-section">
-      <details class="order-details">
-        <summary class="order-summary"><h1>Anseriformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Anatidae <span class="subtext">ducks, geese, and waterfowl</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/greater-white-fronted-goose.html" data-scientific="Anser albifrons">Greater White Fronted Goose</a></li>
-              <li><a href="birds/canada-goose.html" data-scientific="Branta canadensis">Canada Goose</a></li>
-              <li><a href="birds/ruddy-shelduck.html" data-scientific="Tadorna ferruginea">Ruddy Shelduck</a></li>  
-              <li><a href="birds/common-shelduck.html" data-scientific="Tadorna tadorna">Common Shelduck</a></li>
-              <li><a href="birds/mute-swan.html" data-scientific="Cygnus olor">Mute Swan</a></li>
-              <li><a href="birds/black-swan.html" data-scientific="Cygnus atratus">Black Swan</a></li>
-              <li><a href="birds/mallard.html" data-scientific="Anas platyrhynchos">Mallard</a></li>
-              <li><a href="birds/northern-shoveler.html" data-scientific="Spatula clypeata">Northern Shoveler</a></li>             
-              <li><a href="birds/marbled-duck.html" data-scientific="Marmaronetta angustirostris">Marbled Duck</a></li>
-              <li><a href="birds/tufted-duck.html" data-scientific="Aythya fuligula">Tufted Duck</a></li>
-            </ul>
-          </details>
+    </header>
+
+    <main>
+      <h1 class="site-title">forgetmelot's world avifauna records</h1>
+      <section
+        class="search-section"
+        aria-label="search birds by species name or scientific name"
+      >
+        <div class="search-container">
+          <label for="bird-search" class="sr-only">Search bird pages</label>
+          <input
+            id="bird-search"
+            class="search-input"
+            type="search"
+            placeholder="search by species or scientific name (e.g. heron, Ardea)"
+            autocomplete="off"
+            aria-describedby="search-help"
+          />
+          <p id="search-help" class="search-help sr-only">
+            Search by species name, scientific name, or other common names.
+          </p>
         </div>
-      </details>
+        <div
+          id="search-results"
+          class="search-results"
+          aria-live="polite"
+          aria-relevant="additions removals"
+        ></div>
+      </section>
+      <section
+        id="bird-catalog"
+        class="order-section"
+        aria-label="Bird taxonomy sections"
+      ></section>
+    </main>
 
-        
-      <details class="order-details">
-        <summary class="order-summary"><h1>Podicipediformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Podicipedidae <span class="subtext">grebes</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/little-grebe.html" data-scientific="Tachybaptus ruficollis">Little Grebe</a></li>             
-              <li><a href="birds/eared-grebe.html" data-scientific="Podiceps nigricollis" data-other-names="Black-Necked Grebe">Eared Grebe</a></li> 
-            </ul>
-          </details>
-        </div>
-      </details>
-
-      <details class="order-details">
-        <summary class="order-summary"><h1>Columbiformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Columbidae <span class="subtext">pigeons and doves</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/rock-pigeon.html" data-scientific="Columba livia">Rock Pigeon</a></li>
-              <li><a href="birds/common-wood-pigeon.html" data-scientific="Columba palumbus">Common Wood-Pigeon</a></li>
-              <li><a href="birds/stock-dove.html" data-scientific="Columba oenas">Stock Dove</a></li>
-              <li><a href="birds/spotted-dove.html" data-scientific="Spilopelia chinensis">Spotted Dove</a></li>
-            </ul>
-          </details>
-        </div>
-      </details>
-
-         
-      <details class="order-details">
-        <summary class="order-summary"><h1>Galliformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Phasianidae <span class="subtext">pheasants, grouse, and friends</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/ring-necked-pheasant.html" data-scientific="Phasianus colchicus">Ring-Necked Pheasant</a></li> 
-            </ul>
-          </details>
-        </div>
-      </details>
-
-      <details class="order-details">
-        <summary class="order-summary"><h1>Cuculiformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Cuculidae <span class="subtext">cuckoos</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/asian-koel.html" data-scientific="Eudynamys scolopaceus">Asian Koel</a></li>
-              <li><a href="birds/greater-coucal.html" data-scientific="Centropus sinensis">Greater Coucal</a></li>
-            </ul>
-          </details>
-        </div>
-      </details>
-
-      <details class="order-details">
-        <summary class="order-summary"><h1>Gruiformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Rallidae <span class="subtext">rails, gallinules, and coots</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/white-breasted-waterhen.html" data-scientific="Amaurornis phoenicurus">White-Breasted Waterhen</a></li>  
-              <li><a href="birds/eurasian-coot.html" data-scientific="Fulica atra">Eurasian Coot</a></li>
-            </ul>
-          </details>
-        </div>
-      </details>
-
-          
-      <details class="order-details">
-        <summary class="order-summary"><h1>Suliformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Phalacrocoracidae <span class="subtext">cormorants and shags</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/great-cormorant.html" data-scientific="Phalacrocorax carbo">Great Cormorant</a></li>  
-            </ul>
-          </details>
-        </div>
-      </details>
-
-            
-      <details class="order-details">
-        <summary class="order-summary"><h1>Pelecaniformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Ardeidae <span class="subtext">egrets, herons, and bitterns</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/black-crowned-night-heron.html" data-scientific="Nycticorax nycticorax">Black-Crowned Night Heron</a></li>
-              <li><a href="birds/little-egret.html" data-scientific="Egretta garzetta">Little Egret</a></li>
-              <li><a href="birds/pacific-reef-heron.html" data-scientific="Egretta sacra">Pacific Reef-Heron</a></li>
-                            <li><a href="birds/great-egret.html" data-scientific="Ardea alba">Great Egret</a></li>
-              <li><a href="birds/cinnamon-bittern.html" data-scientific="Botaurus cinnamomeus">Cinnamon Bittern</a></li>
-              <li><a href="birds/little-heron.html" data-scientific="Butorides atricapilla">Little Heron</a></li>
-            </ul>
-          </details>
-        </div>
-      </details>
-
-      <details class="order-details">
-        <summary class="order-summary"><h1>Charadriiformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Recurvirostridae <span class="subtext">stilts and avocets</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/black-winged-stilt.html" data-scientific="Himantopus himantopus">Black-Winged Stilt</a></li>
-            </ul>
-          </details>
-
-              
-          <details class="family-details">
-            <summary class="family-summary">Charadriidae <span class="subtext">plovers and lapwings</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/greater-sand-plover.html" data-scientific="Anarhynchus leschenaultii">Greater Sand-Plover</a></li>
-            </ul>
-          </details>
-
-          <details class="family-details">
-            <summary class="family-summary">Scolopacidae <span class="subtext">sandpipers and friends</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/common-sandpiper.html" data-scientific="Actitis hypoleucos">Common Sandpiper</a></li>
-              <li><a href="birds/common-greenshank.html" data-scientific="Tringa nebularia">Common Greenshank</a></li>
-              <li><a href="birds/wood-sandpiper.html" data-scientific="Tringa glareola">Wood Sandpiper</a></li>
-            </ul>
-          </details>
-
-            <details class="family-details">
-                <summary class="family-summary">Laridae <span class="subtext">gulls, terns, and skimmers</span></summary>
-                <ul class="species-list">
-                <li><a href="birds/european-herring-gull.html" data-scientific="Larus argentatus">European Herring Gull</a></li>
-                <li><a href="birds/lesser-black-backed-gull.html" data-scientific="Larus fuscus">Lesser Black-Backed Gull</a></li>
-                <li><a href="birds/yellow-legged-gull.html" data-scientific="Larus michahellis">Yellow-Legged Gull</a></li>
-                <li><a href="birds/common-tern.html" data-scientific="Sterna hirundo">Common Tern</a></li>
-                </ul>
-        </div>
-      </details>
-
-          
-      <details class="order-details">
-        <summary class="order-summary"><h1>Accipitriformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Accipitridae <span class="subtext">hawks, eagles, and kites</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/black-kite.html" data-scientific="Milvus migrans">Black Kite</a></li>
-            </ul>
-          </details>
-        </div>
-      </details>
-
-           
-      <details class="order-details">
-        <summary class="order-summary"><h1>Strigiformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Tytonidae <span class="subtext">barn-owls</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/western-barn-owl.html" data-scientific="Tyto alba">Western Barn Owl</a></li>
-            </ul>
-        </details>
-        </div>
-      </details>
-                
-      <details class="order-details">
-        <summary class="order-summary"><h1>Coraciiformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Alcedinidae <span class="subtext">kingfishers</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/common-kingfisher.html" data-scientific="Alcedo atthis">Common Kingfisher</a></li>
-              <li><a href="birds/white-throated-kingfisher.html" data-scientific="Halcyon smyrnensis">White-Throated Kingfisher</a></li>
-              <li><a href="birds/pied-kingfisher.html" data-scientific="Ceryle rudis">Pied Kingfisher</a></li>
-            </ul>
-          </details>
-        </div>
-      </details>
-            
-      <details class="order-details">
-        <summary class="order-summary"><h1>Apodiformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Apodidae <span class="subtext">swifts</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/common-swift.html" data-scientific="Apus apus">Common Swift</a></li>
-              <li><a href="birds/house-swift.html" data-scientific="Apus nipalensis">House Swift</a></li>
-              <li><a href="birds/pallid-swift.html" data-scientific="Apus pallidus">Pallid Swift</a></li>
-            </ul>
-        </details>
-        </div>
-      </details>
-
-           
-      <details class="order-details">
-        <summary class="order-summary"><h1>Psittaciformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Cacatuidae <span class="subtext">cockatoos</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/yellow-crested-cockatoo.html" data-scientific="Cacatua sulphurea">Yellow-Crested Cockatoo</a></li>
-            </ul>
-          </details>
-               
-          <details class="family-details">
-            <summary class="family-summary">Psittaculidae <span class="subtext">old world parrots</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/rose-ringed-parakeet.html" data-scientific="Psittacula krameri">Rose-Ringed Parakeet</a></li>
-            </ul>
-          </details>
-        </div>
-      </details>
-
-         
-      <details class="order-details">
-        <summary class="order-summary"><h1>Piciformes</h1></summary>
-        <div class="order-content">
-          <details class="family-details">
-            <summary class="family-summary">Megalaimidae <span class="subtext">asian barbets</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/great-barbet.html" data-scientific="Psilopogon virens">Great Barbet</a></li>
-            </ul>
-          </details>
-        </div>
-      </details>
-
-      <details class="order-details">
-        <summary class="order-summary"><h1>Passeriformes</h1></summary>
-        <div class="order-content">
-          
-            <details class="family-details">
-            <summary class="family-summary">Laniidae <span class="subtext">shrikes</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/long-tailed-shrike.html" data-scientific="Lanius schach">Long-Tailed Shrike</a></li>
-            </ul>
-          </details>
- 
-          <details class="family-details">
-            <summary class="family-summary">Leiothrichidae <span class="subtext">laughingthrushes and friends</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/masked-laughingthrush.html" data-scientific="Pterorhinus perspicillatus">Masked Laughingthrush</a></li>
-              <li><a href="birds/blue-winged-minla.html" data-scientific="Actinodura cyanouroptera">Blue-Winged Minla</a></li>
-              <li><a href="birds/silver-eared-mesia.html" data-scientific="Leiothrix argentauris">Silver-Eared Mesia</a></li>
-            </ul>
-          </details>
-
-          <details class="family-details">
-            <summary class="family-summary">Muscicapidae <span class="subtext">old world flycatchers</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/oriental-magpie-robin.html" data-scientific="Copsychus saularis">Oriental Magpie-Robin</a></li>
-              <li><a href="birds/blue-whistling-thrush.html" data-scientific="Myophonus caeruleus">Blue Whistling-Thrush</a></li>
-            </ul>
-          </details>
-                   
-          <details class="family-details">
-            <summary class="family-summary">Zosteropidae <span class="subtext">white-eyes, yuhinas and friends</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/swinhoes-white-eye.html" data-scientific="Zosterops simplex">Swinhoe's White-Eye</a></li>
-            </ul>
-          </details>
-
-                    
-          <details class="family-details">
-            <summary class="family-summary">Sylviidae <span class="subtext">sylviid warblers and friends</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/greater-whitethroat.html" data-scientific="Curruca communis">Greater Whitethroat</a></li>
-              <li><a href="birds/sardinian-warbler.html" data-scientific="Curruca melanocephala">Sardinian Warbler</a></li>
-            </ul>
-          </details>
- 
-          <details class="family-details">
-            <summary class="family-summary">Cisticolidae <span class="subtext">cisticolas and friends</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/plain-prinia.html" data-scientific="Prinia inornata">Plain Prinia</a></li>
-              <li><a href="birds/yellow-bellied-prinia.html" data-scientific="Prinia flaviventris">Yellow-Bellied Prinia</a></li>
-              <li><a href="birds/common-tailorbird.html" data-scientific="Orthotomus sutorius">Common Tailorbird</a></li>
-            </ul>
-          </details>
-
-                 
-          <details class="family-details">
-            <summary class="family-summary">Nectariniidae <span class="subtext">sunbirds and spiderhunters</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/ornate-sunbird.html" data-scientific="Cinnyris ornatus">Ornate Sunbird</a></li>  
-            </ul>
-          </details>
-
-          <details class="family-details">
-            <summary class="family-summary">Turdidae <span class="subtext">thrushes and friends</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/chinese-blackbird.html" data-scientific="Turdus mandarinus">Chinese Blackbird</a></li>
-              <li><a href="birds/fieldfare.html" data-scientific="Turdus pilaris">Fieldfare</a></li>
-            </ul>
-          </details>
-
-                    
-          <details class="family-details">
-            <summary class="family-summary">Dicruridae <span class="subtext">drongos</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/black-drongo.html" data-scientific="Dicrurus macrocercus">Black Drongo</a></li>
-              <li><a href="birds/hair-crested-drongo.html" data-scientific="Dicrurus hottentottus">Hair-Crested Drongo</a></li>
-            </ul>
-          </details>
-
-          <details class="family-details">
-            <summary class="family-summary">Pycnonotidae <span class="subtext">bulbuls</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/red-whiskered-bulbul.html" data-scientific="Pycnonotus jocosus">Red-Whiskered Bulbul</a></li>  
-              <li><a href="birds/light-vented-bulbul.html" data-scientific="Pycnonotus sinensis">Light-Vented Bulbul</a></li>  
-              <li><a href="birds/sooty-headed-bulbul.html" data-scientific="Pycnonotus aurigaster">Sooty-Headed Bulbul</a></li>
-            </ul>
-          </details>
-
-                    
-          <details class="family-details">
-            <summary class="family-summary">Paridae <span class="subtext">tits, chickadees, and titmice</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/asian-tit.html" data-scientific="Parus cinereus">Asian Tit</a></li>
-            </ul>
-          </details>
-
-                 
-                  
-          <details class="family-details">
-            <summary class="family-summary">Certhiidae <span class="subtext">treecreepers</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/eurasian-treecreeper.html" data-scientific="Certhia familiaris">Eurasian Treecreeper</a></li>
-            </ul>
-          </details>
-
-          <details class="family-details">
-            <summary class="family-summary">Sittidae <span class="subtext">nuthatches</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/velvet-fronted-nuthatch.html" data-scientific="Sitta frontalis">Velvet-Fronted Nuthatch</a></li>
-            </ul>
-          </details>
-
-          <details class="family-details">
-            <summary class="family-summary">Fringillidae <span class="subtext">finches, euphonias, and friends</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/common-chaffinch.html" data-scientific="Fringilla coelebs">Common Chaffinch</a></li>
-              <li><a href="birds/redpoll.html" data-scientific="Acanthis flammea">Redpoll</a></li>
-            </ul>
-          </details>
-
-                   
-          <details class="family-details">
-            <summary class="family-summary">Regulidae <span class="subtext">kinglets</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/common-firecrest.html" data-scientific="Regulus ignicapilla">Common Firecrest</a></li>
-            </ul>
-          </details>
-
-                 
-          <details class="family-details">
-            <summary class="family-summary">Troglodytidae <span class="subtext">wrens</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/eurasian-wren.html" data-scientific="Troglodytes troglodytes">Eurasian Wren</a></li>
-            </ul>
-          </details>
-
-              
-          <details class="family-details">
-            <summary class="family-summary">Acrocephalidae <span class="subtext">reed warblers and friends</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/common-reed-warbler.html" data-scientific="Acrocephalus scirpaceus">Common Reed Warbler</a></li>
-            </ul>
-          </details>
-                 
-          <details class="family-details">
-            <summary class="family-summary">Estrildidae <span class="subtext">waxbills and friends</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/scaly-breasted-munia.html" data-scientific="Lonchura punctulata">Scaly-Breasted Munia</a></li>
-              <li><a href="birds/white-rumped-munia.html" data-scientific="Lonchura striata">White-Rumped Munia</a></li>
-            </ul>
-          </details>
-
-                
-          <details class="family-details">
-            <summary class="family-summary">Motacillidae <span class="subtext">wagtails and pipits</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/grey-wagtail.html" data-scientific="Motacilla cinerea">Grey Wagtail</a></li>
-            </ul>
-          </details>
-                    
-          <details class="family-details">
-            <summary class="family-summary">Sturnidae <span class="subtext">starlings</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/common-myna.html" data-scientific="Acridotheres tristis">Common Myna</a></li>
-              <li><a href="birds/crested-myna.html" data-scientific="Acridotheres cristatellus">Crested Myna</a></li>
-              <li><a href="birds/black-collared-starling.html" data-scientific="Gracupica nigricollis">Black-Collared Starling</a></li>
-              <li><a href="birds/white-shouldered-starling.html" data-scientific="Sturnia sinensis">White-Shouldered Starling</a></li>
-              
-            </ul>
-          </details>
-
-                  
-          <details class="family-details">
-            <summary class="family-summary">Passeridae <span class="subtext">old world sparrows</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/eurasian-tree-sparrow.html" data-scientific="Passer montanus">Eurasian Tree Sparrow</a></li> 
-              <li><a href="birds/house-sparrow.html" data-scientific="Passer domesticus">House Sparrow</a></li>  
-            </ul>
-          </details>
-
-          <details class="family-details">
-            <summary class="family-summary">Corvidae <span class="subtext">crows, jays, and magpies</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/red-billed-blue-magpie.html" data-scientific="Urocissa erythroryncha">Red-Billed Blue Magpie</a></li>
-              <li><a href="birds/eurasian-jay.html" data-scientific="Garrulus glandarius">Eurasian Jay</a></li>
-              <li><a href="birds/eurasian-magpie.html" data-scientific="Pica pica">Eurasian Magpie</a></li>
-              <li><a href="birds/eurasian-jackdaw.html" data-scientific="Coloeus monedula">Eurasian Jackdaw</a></li>
-              <li><a href="birds/yellow-billed-chough.html" data-scientific="Pyrrhocorax graculus">Yellow-Billed Chough</a></li>
-              <li><a href="birds/carrion-crow.html" data-scientific="Corvus corone">Carrion Crow</a></li>
-              <li><a href="birds/rook.html" data-scientific="Corvus frugilegus">Rook</a></li>
-              <li><a href="birds/large-billed-crow.html" data-scientific="Corvus macrorhynchos">Large-Billed Crow</a></li>
-              <li><a href="birds/collared-crow.html" data-scientific="Corvus torquatus">Collared Crow</a></li>
-              <li><a href="birds/hooded-crow.html" data-scientific="Corvus cornix">Hooded Crow</a></li>
-            </ul>
-          </details>
-
-                   
-          <details class="family-details">
-            <summary class="family-summary">Emberizidae <span class="subtext">old world buntings</span></summary>
-            <ul class="species-list">
-              <li><a href="birds/corn-bunting.html" data-scientific="Emberiza calandra">Corn Bunting</a></li> 
-            </ul>
-          </details>
-
-        </div>
-      </details>
-    </section>
-  </main>
-  <script src="js/script.js"></script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
