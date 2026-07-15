@@ -266,7 +266,8 @@ document.addEventListener('DOMContentLoaded', function () {
             familyGroup.species.map(function (row) {
               var href = 'birds/' + slugifySpeciesName(row.species || '') + '.html';
               var otherNameAttribute = row.other_name ? ' data-other-names="' + escapeHtml(row.other_name) + '"' : '';
-              return '<li><a href="' + href + '" data-scientific="' + escapeHtml(row.scientific_name || '') + '"' + otherNameAttribute + '>' + escapeHtml(row.species || '') + '</a></li>';
+              var scientificLabel = row.scientific_name ? ' <span class="scientific-label">(' + escapeHtml(row.scientific_name) + ')</span>' : '';
+              return '<li><a href="' + href + '" data-scientific="' + escapeHtml(row.scientific_name || '') + '"' + otherNameAttribute + '>' + escapeHtml(row.species || '') + scientificLabel + '</a></li>';
             }).join(''),
             '  </ul>',
             '</details>'
