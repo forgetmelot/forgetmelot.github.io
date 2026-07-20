@@ -328,6 +328,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     headerEl.innerHTML = buildBirdRibbonMarkup();
 
+    var mainEl = document.querySelector('main.species-page');
+    if (mainEl) {
+      mainEl.classList.add('species-page--tight');
+    }
+
     var resultsEl = document.getElementById('search-results');
     if (!resultsEl) {
       resultsEl = document.createElement('div');
