@@ -26,15 +26,29 @@ Anseriformes,Anatidae,Harlequin Duck,Histrionicus histrionicus,
 Anseriformes,Anatidae,Red-Breasted Merganser,Mergus serrator,
 
 
+Galliformes,Phasianidae,Ring-Necked Pheasant,Phasianus colchicus,
+
+Columbiformes,Columbidae,Rock Pigeon,Columba livia,
+Columbiformes,Columbidae,Common Wood-Pigeon,Columba palumbus,
+Columbiformes,Columbidae,Stock Dove,Columba oenas,
+Columbiformes,Columbidae,European Turtle-Dove,Streptopelia turtur,
+Columbiformes,Columbidae,Spotted Dove,Spilopelia chinensis,
+Columbiformes,Columbidae,Laughing Dove,Spilopelia senegalensis,
 
 
-Suliformes,Phalacrocoracidae,Great Cormorant,Phalacrocorax carbo,
-
-Podicipediformes,Podicipedidae,Little Grebe,Tachybaptus ruficollis,
-Podicipediformes,Podicipedidae,Red-Necked Grebe,Podiceps grisegena,
-Podicipediformes,Podicipedidae,Eared Grebe,Podiceps nigricollis,Black-Necked Grebe
+Cuculiformes,Cuculidae,Greater Coucal,Centropus sinensis,
+Cuculiformes,Cuculidae,Asian Koel,Eudynamys scolopaceus,
+Cuculiformes,Cuculidae,Common Cuckoo,Cuculus canorus,
 
 
+Apodiformes,Apodidae,Common Swift,Apus apus,
+Apodiformes,Apodidae,Pallid Swift,Apus pallidus,
+Apodiformes,Apodidae,Little Swift,Apus affinis,
+Apodiformes,Apodidae,House Swift,Apus nipalensis,
+
+Gruiformes,Gruidae,Common Crane,Grus grus,
+Gruiformes,Rallidae,White-Breasted Waterhen,Amaurornis phoenicurus,
+Gruiformes,Rallidae,Eurasian Coot,Fulica atra,
 
 Charadriiformes,Laridae,Slender-Billed Gull,Chroicocephalus genei,
 Charadriiformes,Laridae,Audouin's Gull,Ichthyaetus audouinii,
@@ -52,8 +66,6 @@ Charadriiformes,Laridae,Black-Naped Tern,Sterna sumatrana,
 Charadriiformes,Laridae,Roseate Tern,Sterna dougallii,
 Charadriiformes,Laridae,Sandwich Tern,Thalasseus sandvicensis,
 Charadriiformes,Laridae,Great Crested Tern,Thalasseus bergii,
-
-
 Charadriiformes,Recurvirostridae,Black-Winged Stilt,Himantopus himantopus,
 Charadriiformes,Charadriidae,Greater Sand-Plover,Anarhynchus leschenaultii,
 Charadriiformes,Charadriidae,Kentish Plover,Anarhynchus alexandrinus,
@@ -63,28 +75,17 @@ Charadriiformes,Scolopacidae,Wood Sandpiper,Tringa glareola,
 Charadriiformes,Scolopacidae,Common Greenshank,Tringa nebularia,
 
 
-Gruiformes,Gruidae,Common Crane,Grus grus,
-Gruiformes,Rallidae,White-Breasted Waterhen,Amaurornis phoenicurus,
-Gruiformes,Rallidae,Eurasian Coot,Fulica atra,
+
+
+
+Podicipediformes,Podicipedidae,Little Grebe,Tachybaptus ruficollis,
+Podicipediformes,Podicipedidae,Red-Necked Grebe,Podiceps grisegena,
+Podicipediformes,Podicipedidae,Eared Grebe,Podiceps nigricollis,Black-Necked Grebe
 
 
 
 
-Columbiformes,Columbidae,Rock Pigeon,Columba livia,
-Columbiformes,Columbidae,Common Wood-Pigeon,Columba palumbus,
-Columbiformes,Columbidae,Stock Dove,Columba oenas,
-Columbiformes,Columbidae,European Turtle-Dove,Streptopelia turtur,
-Columbiformes,Columbidae,Spotted Dove,Spilopelia chinensis,
-Columbiformes,Columbidae,Laughing Dove,Spilopelia senegalensis,
-
-Galliformes,Phasianidae,Ring-Necked Pheasant,Phasianus colchicus,
-
-
-Cuculiformes,Cuculidae,Greater Coucal,Centropus sinensis,
-Cuculiformes,Cuculidae,Asian Koel,Eudynamys scolopaceus,
-Cuculiformes,Cuculidae,Common Cuckoo,Cuculus canorus,
-
-
+Suliformes,Phalacrocoracidae,Great Cormorant,Phalacrocorax carbo,
 
 
 
@@ -102,19 +103,21 @@ Pelecaniformes,Threskiornithidae,Glossy Ibis,Plegadis falcinellus,
 
 Accipitriformes,Accipitridae,Black Kite,Milvus migrans,
 Accipitriformes,Accipitridae,Common Buzzard,Buteo buteo,
+
 Strigiformes,Tytonidae,Western Barn Owl,Tyto alba,
 Strigiformes,Strigidae,Tawny Owl,Strix aluco,
+
+
+Bucerotiformes,Upupidae,Common Hoopoe,Upupa epops,
+
+
 Coraciiformes,Alcedinidae,Common Kingfisher,Alcedo atthis,
 Coraciiformes,Alcedinidae,White-Throated Kingfisher,Halcyon smyrnensis,
 Coraciiformes,Alcedinidae,Pied Kingfisher,Ceryle rudis,
 
-Apodiformes,Apodidae,Common Swift,Apus apus,
-Apodiformes,Apodidae,Pallid Swift,Apus pallidus,
-Apodiformes,Apodidae,Little Swift,Apus affinis,
-Apodiformes,Apodidae,House Swift,Apus nipalensis,
+Piciformes,Megalaimidae,Great Barbet,Psilopogon virens,
 
 
-Bucerotiformes,Upupidae,Common Hoopoe,Upupa epops,
 
 Psittaciformes,Cacatuidae,Yellow-Crested Cockatoo,Cacatua sulphurea,
 Psittaciformes,Psittaculidae,Rose-Ringed Parakeet,Psittacula krameri,
@@ -122,7 +125,7 @@ Psittaciformes,Psittaculidae,Monk Parakeet,Myiopsitta monachus,
 Psittaciformes,Psittaculidae,Red-Masked Parakeet,Psittacara erythrogenys,
 
 
-Piciformes,Megalaimidae,Great Barbet,Psilopogon virens,
+
 
 Passeriformes,Laniidae,Red-Backed Shrike,Lanius collurio,
 Passeriformes,Laniidae,Long-Tailed Shrike,Lanius schach,
