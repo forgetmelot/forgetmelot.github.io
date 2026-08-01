@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
     Sturnidae: 'starlings',
     Passeridae: 'old world sparrows',
     Corvidae: 'crows, jays, and magpies',
-    Emberizidae: 'old world buntings'
+    Emberizidae: 'old world buntings',
+    Alaudidae: 'larks'
   };
 
   function isBirdPage() {
@@ -172,24 +173,55 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  function buildEntriesFromDocument(doc) {
-    var anchors = doc.querySelectorAll('.species-list a[href^="birds/"]');
-    var entries = [];
+  function createBirdNavLink(href, text, className) {
+    var link = document.createElement('a');
+    link.href = href;
+    link.className = className;
+    link.textContent = text;
+    return link;
+  }
 
-    anchors.forEach(function (anchor) {
-      var href = anchor.getAttribute('href') || '';
-      var file = href.split('/').pop();
-      var title = (anchor.textContent || '').trim();
-      if (!file || !title) return;
-      entries.push({
-        file: file,
-        title: title,
-        scientific: anchor.getAttribute('data-scientific') || '',
-        otherNames: anchor.getAttribute('data-other-names') || ''
-      });
+  function createBirdNavSpacer() {
+    var spacer = document.createElement('span');
+    spacer.className = 'bird-nav-spacer';
+    spacer.setAttribute('aria-hidden', 'true');
+    return spacer;
+  }
+
+  function addBirdPageNavigation(rows) {
+    var main = document.querySelector('.species-page');
+    if (!main || !rows || !rows.length) return;
+
+    var pages = buildEntriesFromRows(rows);
+    var currentFile = window.location.pathname.split('/').pop();
+    var currentIndex = pages.findIndex(function (page) {
+      return page.file === currentFile;
     });
+    if (currentIndex === -1) return;
 
-    return entries;
+    var nav = document.createElement('nav');
+    nav.className = 'bird-page-nav';
+    nav.setAttribute('aria-label', 'Bird page navigation');
+
+    var prevPage = pages[currentIndex - 1];
+    var nextPage = pages[currentIndex + 1];
+
+    nav.append(
+      prevPage
+        ? createBirdNavLink('../birds/' + prevPage.file, '← Previous', 'bird-nav-link bird-nav-link--prev')
+        : createBirdNavSpacer(),
+      createBirdNavLink('../index.html', 'Back to birds', 'back-link bird-nav-link bird-nav-link--center'),
+      nextPage
+        ? createBirdNavLink('../birds/' + nextPage.file, 'Next →', 'bird-nav-link bird-nav-link--next')
+        : createBirdNavSpacer()
+    );
+
+    var existingContainer = document.querySelector('.back-link-container');
+    if (existingContainer) {
+      existingContainer.replaceWith(nav);
+    } else {
+      main.append(nav);
+    }
   }
 
   function groupRows(rows) {
@@ -445,6 +477,7 @@ document.addEventListener('DOMContentLoaded', function () {
   dataPromise.then(function (data) {
     if (data.rows.length) {
       renderCatalog(data.rows);
+      addBirdPageNavigation(data.rows);
     }
     activateSearch(data.entries);
   });
@@ -513,4 +546,203 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   })();
 
+  const BIRD_CSV_URL = "../birds.csv";
+
+  function createColorChip(hex) {
+    const chip = document.createElement("span");
+    chip.className = "color-chip";
+
+    const label = document.createElement("span");
+    label.className = "color-hex";
+    label.textContent = hex;
+
+    const swatch = document.createElement("span");
+    swatch.className = "color-swatch";
+    swatch.style.backgroundColor = hex;
+    swatch.setAttribute("aria-hidden", "true");
+
+    chip.append(label, swatch);
+    return chip;
+  }
+
+  function replaceHexColorLinks() {
+    document.querySelectorAll(".species-page a").forEach((anchor) => {
+      const text = anchor.textContent.trim();
+      const hexMatch = text.match(/#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})\b/);
+      if (!hexMatch) return;
+
+      anchor.replaceWith(createColorChip(hexMatch[0]));
+    });
+  }
+
+  function replacePlainHexCodes() {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent) return NodeFilter.FILTER_REJECT;
+        if (["SCRIPT", "STYLE", "NOSCRIPT"].includes(parent.tagName)) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        if (parent.closest(".color-chip, a")) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return /#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})\b/.test(node.nodeValue)
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      },
+    });
+
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+    textNodes.forEach((node) => {
+      const text = node.nodeValue;
+      const fragment = document.createDocumentFragment();
+      const regex = /#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})\b/g;
+      let lastIndex = 0;
+      let match;
+
+      while ((match = regex.exec(text))) {
+        if (match.index > lastIndex) {
+          fragment.append(document.createTextNode(text.slice(lastIndex, match.index)));
+        }
+
+        fragment.append(createColorChip(match[0]));
+        lastIndex = regex.lastIndex;
+      }
+
+      if (lastIndex < text.length) {
+        fragment.append(document.createTextNode(text.slice(lastIndex)));
+      }
+
+      node.parentNode.replaceChild(fragment, node);
+    });
+  }
+
+  function parseCsvLine(line) {
+    const values = [];
+    let current = "";
+    let inQuotes = false;
+
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i];
+      const next = line[i + 1];
+
+      if (char === '"') {
+        if (inQuotes && next === '"') {
+          current += '"';
+          i++;
+        } else {
+          inQuotes = !inQuotes;
+        }
+      } else if (char === "," && !inQuotes) {
+        values.push(current.trim());
+        current = "";
+      } else {
+        current += char;
+      }
+    }
+
+    values.push(current.trim());
+    return values;
+  }
+
+  function slugFromText(text) {
+    return text
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  function normalizeBirdPath(value) {
+    if (!value) return "";
+    const cleaned = value.replace(/^["']|["']$/g, "").trim();
+    const file = cleaned.split("/").pop();
+    if (file.endsWith(".html")) return file;
+    if (file) return `${file}.html`;
+    return "";
+  }
+
+  async function getBirdPagesFromCsv() {
+    const response = await fetch(BIRD_CSV_URL, { cache: "no-store" });
+    if (!response.ok) return [];
+
+    const csv = await response.text();
+    const lines = csv.split(/\r?\n/).filter(Boolean);
+    if (lines.length < 2) return [];
+
+    const headers = parseCsvLine(lines[0]).map((h) => h.toLowerCase());
+
+    const hrefIndex = headers.findIndex((h) =>
+      ["href", "path", "url", "file", "page"].includes(h)
+    );
+    const nameIndex = headers.findIndex((h) =>
+      ["name", "common_name", "common", "species"].includes(h)
+    );
+
+    return lines.slice(1).map((line) => {
+      const cols = parseCsvLine(line);
+      const rawHref = hrefIndex >= 0 ? cols[hrefIndex] : cols[0];
+      const rawName = nameIndex >= 0 ? cols[nameIndex] : cols[1] || cols[0];
+
+      let href = normalizeBirdPath(rawHref);
+      if (!href && rawName) {
+        href = `${slugFromText(rawName)}.html`;
+      }
+
+      return {
+        href,
+        label: rawName || href.replace(/\.html$/, ""),
+      };
+    }).filter((item) => item.href);
+  }
+
+  function addBirdPageNavigation(rows) {
+    var main = document.querySelector('.species-page');
+    if (!main || !rows || !rows.length) return;
+
+    var pages = buildEntriesFromRows(rows);
+    var currentFile = window.location.pathname.split('/').pop();
+    var currentIndex = pages.findIndex(function (page) {
+      return page.file === currentFile;
+    });
+    if (currentIndex === -1) return;
+
+    var nav = document.createElement('nav');
+    nav.className = 'bird-page-nav';
+    nav.setAttribute('aria-label', 'Bird page navigation');
+
+    var prevPage = pages[currentIndex - 1];
+    var nextPage = pages[currentIndex + 1];
+
+    nav.append(
+      prevPage
+        ? createBirdNavLink('../birds/' + prevPage.file, '← Previous', 'bird-nav-link bird-nav-link--prev')
+        : createBirdNavSpacer(),
+      createBirdNavLink('../index.html', 'Back to birds', 'back-link bird-nav-link bird-nav-link--center'),
+      nextPage
+        ? createBirdNavLink('../birds/' + nextPage.file, 'Next →', 'bird-nav-link bird-nav-link--next')
+        : createBirdNavSpacer()
+    );
+
+    var existingContainer = document.querySelector('.back-link-container');
+    if (existingContainer) {
+      existingContainer.replaceWith(nav);
+    } else {
+      main.append(nav);
+    }
+  }
+
+  function applyBirdPageEnhancements() {
+    replaceHexColorLinks();
+    replacePlainHexCodes();
+    addBirdPageNavigation();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", applyBirdPageEnhancements);
+  } else {
+    applyBirdPageEnhancements();
+  }
 });

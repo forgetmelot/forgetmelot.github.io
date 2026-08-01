@@ -16,7 +16,7 @@ Anseriformes,Anatidae,Eurasian Wigeon,Mareca penelope,
 Anseriformes,Anatidae,Chiloe Wigeon,Mareca sibilatrix,
 Anseriformes,Anatidae,Mallard,Anas platyrhynchos,
 Anseriformes,Anatidae,Northern Pintail,Anas acuta,
-Anseriformes,Anatidae,Green-Winged Teal,Anas crecca,
+Anseriformes,Anatidae,Green-Winged Teal,Anas crecca,"Eurasian Teal, Common Teal"
 Anseriformes,Anatidae,Marbled Duck,Marmaronetta angustirostris,
 Anseriformes,Anatidae,Common Pochard,Aythya ferina,
 Anseriformes,Anatidae,Tufted Duck,Aythya fuligula,
@@ -25,6 +25,7 @@ Anseriformes,Anatidae,Common Eider,Somateria mollissima,
 Anseriformes,Anatidae,Harlequin Duck,Histrionicus histrionicus,
 Anseriformes,Anatidae,Red-Breasted Merganser,Mergus serrator,
 
+Galliformes,Phasianidae,Rock Ptarmigan,Lagopus muta,
 Galliformes,Phasianidae,Ring-Necked Pheasant,Phasianus colchicus,
 
 Columbiformes,Columbidae,Rock Pigeon,Columba livia,
@@ -66,6 +67,9 @@ Charadriiformes,Laridae,Roseate Tern,Sterna dougallii,
 Charadriiformes,Laridae,Sandwich Tern,Thalasseus sandvicensis,
 Charadriiformes,Laridae,Great Crested Tern,Thalasseus bergii,
 Charadriiformes,Recurvirostridae,Black-Winged Stilt,Himantopus himantopus,
+
+Charadriiformes,Charadriidae,Black-Bellied Plover,Pluvialis squatarola,"Grey Plover, Gray Plover"
+Charadriiformes,Charadriidae,European Golden-Plover,Pluvialis apricaria
 Charadriiformes,Charadriidae,Greater Sand-Plover,Anarhynchus leschenaultii,
 Charadriiformes,Charadriidae,Kentish Plover,Anarhynchus alexandrinus,
 Charadriiformes,Scolopacidae,Common Sandpiper,Actitis hypoleucos,
@@ -141,6 +145,16 @@ Passeriformes,Muscicapidae,Blue Whistling-Thrush,Myophonus caeruleus,
 Passeriformes,Muscicapidae,Moussier's Redstart,Phoenicurus moussieri,
 Passeriformes,Muscicapidae,Common Redstart,Phoenicurus phoenicurus,
 Passeriformes,Muscicapidae,Black Redstart,Phoenicurus ochruros,
+
+Passeriformes,Muscicapidae,Northern Wheatear,Oenanthe oenanthe,
+Passeriformes,Muscicapidae,Atlas Wheatear,Oenanthe seebohmi,
+Passeriformes,Muscicapidae,Desert Wheatear,Oenanthe deserti,
+Passeriformes,Muscicapidae,Red-Rumped Wheatear,Oenanthe moesta,
+Passeriformes,Muscicapidae,Black Wheatear,Oenanthe leucura,
+Passeriformes,Muscicapidae,White-Crowned Wheatear,Oenanthe leucopyga,
+Passeriformes,Muscicapidae,Mourning Wheatear,Oenanthe lugens,
+
+
 Passeriformes,Muscicapidae,European Pied Flycatcher,Ficedula hypoleuca,
 
 Passeriformes,Zosteropidae,Swinhoe's White-Eye,Zosterops simplex,
@@ -180,6 +194,19 @@ Passeriformes,Pycnonotidae,Red-Whiskered Bulbul,Pycnonotus jocosus,
 Passeriformes,Pycnonotidae,Sooty-Headed Bulbul,Pycnonotus aurigaster,
 
 Passeriformes,Paridae,Asian Tit,Parus cinereus,
+
+Passeriformes,Alaudidae,Greater Hoopoe-Lark,Alaemon alaudipes,
+Passeriformes,Alaudidae,Thick-Billed Lark,Ramphocoris clotbey,
+Passeriformes,Alaudidae,Bar-Tailed Lark,Ammomanes cinctura,
+Passeriformes,Alaudidae,Desert Lark,Ammomanes deserti,
+Passeriformes,Alaudidae,Wood Lark,Lullula arborea,Woodlark
+Passeriformes,Alaudidae,Eurasian Skylark,Alauda arvensis,
+Passeriformes,Alaudidae,Thekla's Lark,Galerida theklae,
+Passeriformes,Alaudidae,Crested Lark,Galerida cristata,
+Passeriformes,Alaudidae,Horned Lark,Eremophila alpestris,Shore Lark
+Passeriformes,Alaudidae,Temminck's Lark,Eremophila bilopha,
+
+
 
 Passeriformes,Certhiidae,Eurasian Treecreeper,Certhia familiaris,
 
