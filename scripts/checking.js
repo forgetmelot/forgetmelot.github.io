@@ -121,23 +121,105 @@ function printMissingImages() {
   missingImages.forEach((fileName) => console.log(`- ${fileName}`));
 }
 
+function getBirdValue(bird, keys) {
+  for (const key of keys) {
+    if (bird[key]) return bird[key];
+  }
+  return '';
+}
+
+function buildTaxonomyLines(order, family) {
+  return [
+    `  <p class="taxonomy">Order: ${order}</p>`,
+    `  <p class="taxonomy">Family: ${family}</p>`,
+  ].join('\n');
+}
+
+function ensureTaxonomyLines(content, order, family) {
+  const taxonomyPattern =
+    /\n\s*<p class="taxonomy">Order:[\s\S]*?\n\s*<p class="taxonomy">Family:[\s\S]*?<\/p>/m;
+
+  const taxonomyLines = buildTaxonomyLines(order, family);
+
+  if (taxonomyPattern.test(content)) {
+    return content.replace(taxonomyPattern, `\n${taxonomyLines}`);
+  }
+
+  const insertAfterOtherNames = /(<p class="other-names">[\s\S]*?<\/p>)/m;
+  const insertAfterLatin = /(<h2 class="latin">[\s\S]*?<\/h2>)/m;
+
+  if (insertAfterOtherNames.test(content)) {
+    return content.replace(insertAfterOtherNames, `$1\n${taxonomyLines}`);
+  }
+
+  if (insertAfterLatin.test(content)) {
+    return content.replace(insertAfterLatin, `$1\n${taxonomyLines}`);
+  }
+
+  return content;
+}
+
+function syncTemplateFile() {
+  const template = fs.readFileSync(templatePath, 'utf8');
+  const updated = ensureTaxonomyLines(template, '{{order}}', '{{family}}');
+
+  if (updated !== template) {
+    fs.writeFileSync(templatePath, updated, 'utf8');
+    console.log('Updated birds/template.html');
+  }
+}
+
+function syncExistingBirdPages(birds) {
+  const birdBySlug = new Map(
+    birds
+      .filter((bird) => bird.species)
+      .map((bird) => [slugifySpeciesName(bird.species), bird])
+  );
+
+  fs.readdirSync(birdsDir)
+    .filter((fileName) => fileName.endsWith('.html') && fileName !== 'template.html')
+    .forEach((fileName) => {
+      const bird = birdBySlug.get(fileName.replace(/\.html$/, ''));
+      if (!bird) return;
+
+      const filePath = path.join(birdsDir, fileName);
+      const original = fs.readFileSync(filePath, 'utf8');
+
+      const order = getBirdValue(bird, ['order', 'Order']);
+      const family = getBirdValue(bird, ['family', 'Family']);
+      const updated = ensureTaxonomyLines(original, order, family);
+
+      if (updated !== original) {
+        fs.writeFileSync(filePath, updated, 'utf8');
+      }
+    });
+}
+
 function fillTemplate(template, bird) {
   const title = bird.species;
   const scientificName = bird.scientific_name || 'Scientific';
   const otherNames = bird.other_name ? `Other names: ${bird.other_name}` : 'Other names:';
+  const order = getBirdValue(bird, ['order', 'Order']);
+  const family = getBirdValue(bird, ['family', 'Family']);
 
   return template
     .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
     .replace(/<h1>[^<]*<\/h1>/, `<h1>${title}</h1>`)
     .replace(/<h2 class="latin">[^<]*<\/h2>/, `<h2 class="latin">${scientificName}</h2>`)
-    .replace(/<p class="other-names">[^<]*<\/p>/, `<p class="other-names">${otherNames}</p>`);
+    .replace(/<p class="other-names">[^<]*<\/p>/, `<p class="other-names">${otherNames}</p>`)
+    .replace(/{{order}}/g, order)
+    .replace(/{{family}}/g, family);
 }
 
 function main() {
   const csvText = fs.readFileSync(csvPath, 'utf8');
-  const template = fs.readFileSync(templatePath, 'utf8');
   const birds = parseCsv(csvText);
+
   printMissingImages();
+  syncTemplateFile();
+  syncExistingBirdPages(birds);
+
+  const template = fs.readFileSync(templatePath, 'utf8');
 
   const existingPages = new Set(
     fs.readdirSync(birdsDir)

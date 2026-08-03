@@ -43,13 +43,10 @@ h2 {
   color: #222222;
 }
 
-@media (max-width: 600px) {
-  .site-title {
-    font-size: 1.4rem;
-  }
-}
 
-/* Header / Navigation */
+/* desktop*/
+
+/* Header / index */
 .site-header {
   display: block;
   background: #ffffff;
@@ -90,10 +87,7 @@ h2 {
   text-decoration: underline;
 }
 
-.site-header--bird .nav-container {
-  padding-top: 7px;
-  padding-bottom: 7px;
-}
+
 
 .search-section--header {
   max-width: 900px;
@@ -134,7 +128,7 @@ h2 {
   margin-top: 0;
 }
 
-/* About section: image + text */
+/* About me */
 .about-section {
   max-width: 900px;
   margin: 24px auto;
@@ -165,26 +159,11 @@ h2 {
 .about-text p {
   margin: 0;
 }
-/* Extra spacing specifically between the about paragraph and the ratings */
+
 .about-ratings {
   margin-top: 24px;
 }
 
-@media (max-width: 600px) {
-  .about-section {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-  .about-image-wrapper {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 12px;
-  }
-  .about-ratings .stars {
-    justify-content: center;
-  }
-}
 
 /* Order / taxonomy dropdown */
 .order-section {
@@ -192,7 +171,7 @@ h2 {
   margin: 24px auto;
   padding: 16px;
 }
-/* space between sibling order blocks */
+
 .order-details + .order-details {
   margin-top: 20px;
 }
@@ -282,49 +261,60 @@ h2 {
   margin-top: 8px;
 }
 
-@media (max-width: 600px) {
-  .order-summary h1 {
-    font-size: 1.2rem;
-  }
-}
-
-/* Species page styles */
+/* Bird Species page styles */
 .species-page {
   max-width: 700px;
   margin: 12px auto;
   padding: 8px 16px 16px;
 }
+
 .species-page--tight {
   max-width: 700px;
   margin: 12px auto;
   padding: 8px 16px 16px;
 }
+
 .species-hero {
   display: block;
   margin-bottom: 16px;
 }
+
 .species-hero .species-info h1 {
   font-size: 1.6rem;
   margin: 0 0 6px 0;
+  color: #222222;
+  font-weight: 700;
 }
+
 .species-info .latin {
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 1.05rem;
+  font-weight: 500;
   font-style: italic;
-  margin: 0 0 10px 0;
+  margin: 0 0 6px 0;
   color: #666666;
 }
+
 .species-info .other-names {
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 1.05rem;
+  font-weight: 500;
   font-style: normal;
-  margin: 0 0 10px 0;
+  margin: 0 0 6px 0;
   color: #666666;
 }
+
+.species-info .taxonomy {
+  font-size: 0.95rem;
+  font-weight: 300;
+  margin: 0 0 4px 0;
+  color: #666666;
+  opacity: 0.85;
+}
+
 .species-media {
   text-align: center;
   margin: 12px 0;
 }
+
 .species-media img {
   width: 100%;
   max-width: 640px;
@@ -333,20 +323,24 @@ h2 {
   display: block;
   margin: 0 auto;
 }
+
 .lead {
   margin-bottom: 12px;
   line-height: 1.6;
 }
+
 .back-link {
   display: inline-block;
   margin-top: 8px;
   color: #8f0e3d;
   text-decoration: none;
 }
+
 .blog-content p {
   margin-bottom: 12px;
   line-height: 1.6;
 }
+
 .species-section {
   margin-top: 16px;
   padding-top: 12px;
@@ -357,24 +351,27 @@ h2 {
 .blog-content .species-section {
   margin-bottom: 44px;
 }
+
 /* Remove divider before first section to keep content continuous */
 .blog-content .species-section:first-of-type {
   border-top: none;
   padding-top: 0;
   margin-top: 0;
 }
+
 .species-section h3 {
   margin: 0 0 8px 0;
   font-size: 1.1rem;
 }
 
-/* Ratings */
+/* Bird species page Ratings */
 .ratings {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin: 16px 0 28px 0;
 }
+
 .rating-row {
   display: flex;
   flex-direction: column;
@@ -383,16 +380,19 @@ h2 {
   background: transparent;
   border-radius: 0;
 }
+
 .rating-label {
   margin: 0 0 8px 0;
   font-size: 1.1rem;
   font-weight: 700;
   color: #222222;
 }
+
 .stars {
   display: inline-flex;
   gap: 6px;
 }
+
 .star {
   font-size: 1.2rem;
   color: #ddd;
@@ -400,17 +400,20 @@ h2 {
   display: inline-block;
   line-height: 1;
 }
+
 .star.filled {
   color: #8f0e3d;
 }
+
 .note-box {
   border: none;
   padding: 0;
   background: transparent;
   border-radius: 0;
   color: #333;
-  margin: 0 0 12px 0; /* add spacing below note */
+  margin: 0 0 12px 0;
 }
+
 .location-line {
   margin: 6px 0 15px 0;
   display: flex;
@@ -419,6 +422,7 @@ h2 {
   color: #333;
   font-weight: 600;
 }
+
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   font-size: 1.2rem;
@@ -438,13 +442,7 @@ h2 {
   border: 0;
 }
 
-@media (max-width: 700px) {
-  .species-info h1 {
-    font-size: 1.4rem;
-  }
-}
-
-/* Search styles */
+/* Search bar */
 .search-section {
   max-width: 900px;
   margin: 0 auto 12px auto;
@@ -541,4 +539,243 @@ h2 {
 
 .bird-nav-spacer {
   display: block;
+}
+
+
+/* bird page header */
+.site-header--bird {
+  position: relative;
+  height: 56px;
+}
+
+/*elements in ribbon*/
+.site-header--bird .nav-container {
+  max-width: 900px;
+  margin: 0 auto;
+  height: 56px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+/*forget me lot birding*/
+.site-header--bird .brand {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: #222222;
+}
+
+.site-header--bird .brand-part {
+  display: inline;
+  white-space: nowrap;
+}
+
+/*location of search bar*/
+.site-header--bird .site-nav {
+  margin-left: 0;
+}
+
+.site-header--bird .site-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.site-header--bird .site-nav .nav-list li {
+  display: flex;
+  align-items: center;
+}
+
+/*about me and lucky buttons*/
+.site-header--bird .site-nav a {
+  color: #8f0e3d;
+  text-transform: lowercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  line-height: 1.2;
+}
+
+
+.site-header--bird .site-nav a.lucky .nav-part + .nav-part {
+  margin-left: 0.25em;
+}
+
+.site-header--bird .nav-part {
+  display: inline;
+  white-space: nowrap;
+}
+
+.site-header--bird .site-nav a.nav-link:not(.lucky) {
+  align-items: center;
+  text-align: left;
+  align-self: auto;
+  justify-content: center;
+  min-height: auto;
+}
+
+.site-header--bird .site-nav a.lucky {
+  align-items: center;
+  text-align: center;
+  align-self: auto;
+  justify-content: center;
+}
+
+.site-header--bird .site-nav a.lucky .nav-part {
+  text-align: center;
+}
+
+.site-header--bird .search-section--header {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  margin: 0;
+  padding: 0;
+  border-top: none;
+  max-width: none;
+  width: auto;
+}
+
+.site-header--bird .search-section--header .search-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-header--bird .search-section--header .search-input {
+  width: 220px;
+  max-width: 220px;
+  min-width: 0;
+  height: 34px;
+  margin: 0;
+  padding: 6px 10px;
+  box-sizing: border-box;
+}
+
+
+
+/* Bird header — mobile */
+@media (max-width: 600px) {
+
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .about-image-wrapper {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 12px;
+  }
+  .about-ratings .stars {
+    justify-content: center;
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+  }
+
+  .order-summary h1 {
+    font-size: 1.2rem;
+  }
+
+
+  .site-header {
+    display: block;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+    transition: background .2s ease, border-color .2s ease;
+  }
+
+  .site-header .nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .site-header--bird {
+    position: relative;
+    height: 56px;
+  }
+
+  .site-header--bird .nav-container {
+    width: 100%;
+    max-width: 900px;
+    height: 56px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .site-header--bird .brand {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.05;
+  }
+
+  .site-header--bird .brand-part {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .site-header--bird .site-nav .nav-list {
+    gap: 16px;
+  }
+
+  .site-header--bird .site-nav a {
+    padding: 0;
+    line-height: 1.05;
+    flex-direction: column;
+  }
+
+  .site-header--bird .site-nav a.nav-link:not(.lucky) {
+    align-items: flex-start;
+  }
+
+  .site-header--bird .site-nav a.lucky {
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-header--bird .site-nav a.lucky .nav-part {
+    text-align: center;
+  }
+
+  .site-header--bird .site-nav {
+    margin-left: auto;
+  }
+
+  .site-header--bird .search-container--ribbon {
+    width: 90px;
+    max-width: 90px;
+    flex: 0 0 90px;
+    margin: 0 8px 0 0;
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .site-header--bird .search-container--ribbon .search-input {
+    width: 100%;
+    max-width: 90px;
+    min-width: 0;
+    height: 34px;
+    margin: 0;
+    padding: 6px 10px;
+    box-sizing: border-box;
+  }
 }
