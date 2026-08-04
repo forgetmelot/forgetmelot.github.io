@@ -147,7 +147,7 @@ Passeriformes,Muscicapidae,Common Redstart,Phoenicurus phoenicurus,
 Passeriformes,Muscicapidae,Black Redstart,Phoenicurus ochruros,
 
 Passeriformes,Muscicapidae,Northern Wheatear,Oenanthe oenanthe,
-Passeriformes,Muscicapidae,Atlas Wheatear,Oenanthe seebohmi,
+Passeriformes,Muscicapidae,Atlas Wheatear,Oenanthe seebohmi,Seebohm's Wheatear
 Passeriformes,Muscicapidae,Desert Wheatear,Oenanthe deserti,
 Passeriformes,Muscicapidae,Red-Rumped Wheatear,Oenanthe moesta,
 Passeriformes,Muscicapidae,Black Wheatear,Oenanthe leucura,
@@ -174,7 +174,6 @@ Passeriformes,Phylloscopidae,Wood Warbler,Phylloscopus sibilatrix,
 Passeriformes,Cisticolidae,Plain Prinia,Prinia inornata,
 Passeriformes,Cisticolidae,Yellow-Bellied Prinia,Prinia flaviventris,
 Passeriformes,Cisticolidae,Common Tailorbird,Orthotomus sutorius,
-Passeriformes,Cisticolidae,Zitting Cisticola,Cisticola juncidis,
 Passeriformes,Nectariniidae,Ornate Sunbird,Cinnyris ornatus,
 
 Passeriformes,Turdidae,Mistle Thrush,Turdus viscivorus,
@@ -199,10 +198,9 @@ Passeriformes,Alaudidae,Greater Hoopoe-Lark,Alaemon alaudipes,
 Passeriformes,Alaudidae,Thick-Billed Lark,Ramphocoris clotbey,
 Passeriformes,Alaudidae,Bar-Tailed Lark,Ammomanes cinctura,
 Passeriformes,Alaudidae,Desert Lark,Ammomanes deserti,
-Passeriformes,Alaudidae,Wood Lark,Lullula arborea,Woodlark
 Passeriformes,Alaudidae,Eurasian Skylark,Alauda arvensis,
 Passeriformes,Alaudidae,Thekla's Lark,Galerida theklae,
-Passeriformes,Alaudidae,Crested Lark,Galerida cristata,
+Passeriformes,Alaudidae,Crested Lark,Galerida cristata,Maghreb Lark
 Passeriformes,Alaudidae,Horned Lark,Eremophila alpestris,Shore Lark
 Passeriformes,Alaudidae,Temminck's Lark,Eremophila bilopha,
 
@@ -231,7 +229,7 @@ Passeriformes,Estrildidae,White-Rumped Munia,Lonchura striata,
 
 Passeriformes,Motacillidae,Grey Wagtail,Motacilla cinerea,
 Passeriformes,Motacillidae,Western Yellow Wagtail,Motacilla flava,
-Passeriformes,Motacillidae,White Wagtail,Motacilla alba,
+Passeriformes,Motacillidae,White Wagtail,Motacilla alba,Pied Wagtail
 Passeriformes,Motacillidae,Meadow Pipit,Anthus pratensis,
 
 Passeriformes,Sturnidae,Spotless Starling,Sturnus unicolor,
