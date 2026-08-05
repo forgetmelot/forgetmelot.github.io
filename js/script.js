@@ -335,8 +335,8 @@ document.addEventListener('DOMContentLoaded', function () {
       buildSearchMarkup(),
       '  <nav class="site-nav" aria-label="Main navigation">',
       '    <ul class="nav-list">',
-      '      <li><a href="' + getBirdPagePathPrefix() + 'me.html" class="nav-link"><span class="nav-part">about me</span></a></li>',
-      '      <li><a href="' + getBirdPagePathPrefix() + 'index.html" class="lucky nav-link"><span class="nav-part">i\'m feeling</span><span class="nav-part">lucky</span></a></li>',
+      '      <li><a href="' + getBirdPagePathPrefix() + 'me.html" class="nav-link"><span class="nav-part">about</span><span class="nav-part">me</span></a></li>',
+      '      <li><a href="' + getBirdPagePathPrefix() + 'index.html" class="lucky nav-link"><span class="nav-part">surprise</span><span class="nav-part">bird!</span></a></li>',
       '    </ul>',
       '  </nav>',
       '</div>'

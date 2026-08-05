@@ -622,6 +622,10 @@ h2 {
   min-height: auto;
 }
 
+.site-header--bird .site-nav a.nav-link:not(.lucky) .nav-part + .nav-part {
+  margin-left: 0.25em;
+}
+
 .site-header--bird .site-nav a.lucky {
   align-items: center;
   text-align: center;
@@ -688,42 +692,53 @@ h2 {
   }
 
 
-  .site-header {
+  .site-header,
+  .site-header--bird {
+    height: 76px;
     display: block;
     background: #ffffff;
     border-bottom: 1px solid #e6e6e6;
     transition: background .2s ease, border-color .2s ease;
+    overflow: hidden;
   }
 
-  .site-header .nav-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-
-  .site-header--bird {
-    position: relative;
-    height: 56px;
-  }
-
+  .site-header .nav-container,
   .site-header--bird .nav-container {
     width: 100%;
     max-width: 900px;
-    height: 56px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 10px 16px;
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
+    flex-wrap: nowrap;
+    gap: 8px 10px;
   }
+
+  .site-header .site-nav .nav-list {
+    align-items: center;
+  }
+
+  .site-header .site-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+
+  /* bird header uses same fixed height on mobile to match index */
 
   .site-header--bird .brand {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     line-height: 1.05;
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 36%;
   }
 
   .site-header--bird .brand-part {
@@ -732,22 +747,34 @@ h2 {
   }
 
   .site-header--bird .site-nav .nav-list {
-    gap: 16px;
+    gap: 4px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .site-header--bird .site-nav a {
     padding: 0;
     line-height: 1.05;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .site-header--bird .site-nav a.nav-link:not(.lucky) {
-    align-items: flex-start;
+    align-items: center;
+    width: 3.2em;
+    white-space: normal;
+    word-break: normal;
   }
 
   .site-header--bird .site-nav a.lucky {
     align-items: center;
     text-align: center;
+    width: 4.2em;
+    white-space: normal;
   }
 
   .site-header--bird .site-nav a.lucky .nav-part {
@@ -755,14 +782,16 @@ h2 {
   }
 
   .site-header--bird .site-nav {
-    margin-left: auto;
+    margin-left: 0;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .site-header--bird .search-container--ribbon {
-    width: 90px;
-    max-width: 90px;
-    flex: 0 0 90px;
-    margin: 0 8px 0 0;
+    width: clamp(96px, 22vw, 120px);
+    max-width: 120px;
+    flex: 0 1 auto;
+    margin: 0;
     position: static;
     display: flex;
     align-items: center;
@@ -771,11 +800,15 @@ h2 {
 
   .site-header--bird .search-container--ribbon .search-input {
     width: 100%;
-    max-width: 90px;
+    max-width: 120px;
     min-width: 0;
     height: 34px;
     margin: 0;
     padding: 6px 10px;
     box-sizing: border-box;
+  }
+
+  .site-header--bird .search-container--ribbon + .site-nav {
+    margin-left: 0;
   }
 }
