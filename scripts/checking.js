@@ -128,21 +128,31 @@ function getBirdValue(bird, keys) {
   return '';
 }
 
-function buildTaxonomyLines(order, family) {
+function buildTaxonomyLines(order, family, indent = '') {
+  const lineIndent = indent || '  ';
   return [
-    `  <p class="taxonomy">Order: ${order}</p>`,
-    `  <p class="taxonomy">Family: ${family}</p>`,
+    `${lineIndent}<p class="taxonomy">Order: ${order}</p>`,
+    `${lineIndent}<p class="taxonomy">Family: ${family}</p>`,
   ].join('\n');
 }
 
-function ensureTaxonomyLines(content, order, family) {
-  const taxonomyPattern =
-    /\n\s*<p class="taxonomy">Order:[\s\S]*?\n\s*<p class="taxonomy">Family:[\s\S]*?<\/p>/m;
+function getIndentation(content, pattern) {
+  const match = content.match(pattern);
+  if (!match) return '';
+  return match[1] || '';
+}
 
-  const taxonomyLines = buildTaxonomyLines(order, family);
+function ensureTaxonomyLines(content, order, family) {
+  const taxonomyPattern = /(?:\n)([ \t]*)<p class="taxonomy">Order:[\s\S]*?\n\1<p class="taxonomy">Family:[\s\S]*?<\/p>/m;
+
+  const anchorIndent = getIndentation(content, /^(\s*)<p class="other-names">/m)
+    || getIndentation(content, /^(\s*)<h2 class="latin">/m)
+    || '';
+
+  const taxonomyLines = buildTaxonomyLines(order, family, anchorIndent);
 
   if (taxonomyPattern.test(content)) {
-    return content.replace(taxonomyPattern, `\n${taxonomyLines}`);
+    return content.replace(taxonomyPattern, () => `\n${buildTaxonomyLines(order, family, anchorIndent)}`);
   }
 
   const insertAfterOtherNames = /(<p class="other-names">[\s\S]*?<\/p>)/m;
