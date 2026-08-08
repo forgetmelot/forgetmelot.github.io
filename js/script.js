@@ -59,6 +59,15 @@ document.addEventListener('DOMContentLoaded', function () {
     Alcidae: 'auks, murres, and puffins',
     Picidae: 'woodpeckers',
     Prunellidae: 'accentors',
+    Caprimulgidae: 'nightjars and friends',
+    Ciconiidae: 'storks',
+    Falconidae: 'falcons and caracaras',
+    Gaviidae: 'loons',
+    Glareolidae: 'pratincoles and coursers',
+    Phoenicopteridae: 'flamingos',
+    Procellariidae: 'shearwaters and petrels',
+    Pteroclidae: 'sandgrouse',
+    Stercorariidae: 'skuas and jaegers'
   };
 
   function isBirdPage() {
