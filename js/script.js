@@ -55,7 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
     Passeridae: 'old world sparrows',
     Corvidae: 'crows, jays, and magpies',
     Emberizidae: 'old world buntings',
-    Alaudidae: 'larks'
+    Alaudidae: 'larks',
+    Alcidae: 'auks, murres, and puffins',
+    Picidae: 'woodpeckers',
+    Prunellidae: 'accentors',
   };
 
   function isBirdPage() {
