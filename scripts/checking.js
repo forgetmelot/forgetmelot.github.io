@@ -7,6 +7,7 @@ const projectRoot = path.resolve(__dirname, '..');
 const csvPath = path.join(projectRoot, 'birds.csv');
 const templatePath = path.join(projectRoot, 'birds', 'template.html');
 const birdsDir = path.join(projectRoot, 'birds');
+const siteScriptPath = path.join(projectRoot, 'js', 'script.js');
 
 function slugifySpeciesName(name) {
   return String(name || '')
@@ -121,6 +122,44 @@ function printMissingImages() {
   missingImages.forEach((fileName) => console.log(`- ${fileName}`));
 }
 
+function getFamilySubtexts() {
+  const content = fs.readFileSync(siteScriptPath, 'utf8');
+  const match = content.match(/var FAMILY_SUBTEXTS = \{([\s\S]*?)\n\s*\};/);
+
+  if (!match) {
+    return {};
+  }
+
+  const familySubtexts = {};
+  const body = match[1];
+
+  body.replace(/^\s*([A-Za-z][A-Za-z0-9_]*):/gm, (fullMatch, familyName) => {
+    familySubtexts[familyName] = true;
+  });
+
+  return familySubtexts;
+}
+
+function printMissingFamilyDescriptions(birds) {
+  const familySubtexts = getFamilySubtexts();
+  const presentFamilies = [...new Set(
+    birds
+      .filter((bird) => bird.family || bird.Family)
+      .map((bird) => getBirdValue(bird, ['family', 'Family']))
+      .filter(Boolean)
+  )].sort();
+
+  const missingFamilyDescriptions = presentFamilies.filter((familyName) => !familySubtexts[familyName]);
+
+  if (!missingFamilyDescriptions.length) {
+    console.log('No families missing description names in js/script.js.');
+    return;
+  }
+
+  console.log('Families missing description names in js/script.js:');
+  missingFamilyDescriptions.forEach((familyName) => console.log(`- ${familyName}`));
+}
+
 function getBirdValue(bird, keys) {
   for (const key of keys) {
     if (bird[key]) return bird[key];
@@ -226,6 +265,7 @@ function main() {
   const birds = parseCsv(csvText);
 
   printMissingImages();
+  printMissingFamilyDescriptions(birds);
   syncTemplateFile();
   syncExistingBirdPages(birds);
 
