@@ -67,7 +67,11 @@ document.addEventListener('DOMContentLoaded', function () {
     Phoenicopteridae: 'flamingos',
     Procellariidae: 'shearwaters and petrels',
     Pteroclidae: 'sandgrouse',
-    Stercorariidae: 'skuas and jaegers'
+    Stercorariidae: 'skuas and jaegers',
+    Calcariidae: 'longspurs and snow buntings',
+    Cinclidae: 'dippers',
+    Haematopodidae: 'oystercatchers',
+    Hirundinidae: 'swallows'
   };
 
   function isBirdPage() {
