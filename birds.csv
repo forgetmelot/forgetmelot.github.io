@@ -37,8 +37,10 @@ Columbiformes,Columbidae,Rock Pigeon,Columba livia,
 Columbiformes,Columbidae,Common Wood-Pigeon,Columba palumbus,
 Columbiformes,Columbidae,Stock Dove,Columba oenas,
 Columbiformes,Columbidae,European Turtle-Dove,Streptopelia turtur,
+Columbiformes,Columbidae,Eurasian Collared-Dove,Streptopelia decaocto,
 Columbiformes,Columbidae,Spotted Dove,Spilopelia chinensis,
 Columbiformes,Columbidae,Laughing Dove,Spilopelia senegalensis,
+Columbiformes,Columbidae,Asian Emerald Dove,Chalcophaps indica,
 
 Pterocliformes,Pteroclidae,Spotted Sandgrouse,Pterocles senegallus,
 Pterocliformes,Pteroclidae,Black-Bellied Sandgrouse,Pterocles orientalis,
@@ -58,6 +60,7 @@ Apodiformes,Apodidae,Little Swift,Apus affinis,
 Apodiformes,Apodidae,House Swift,Apus nipalensis,
 
 Gruiformes,Gruidae,Common Crane,Grus grus,
+Gruiformes,Rallidae,Water Rail,Rallus aquaticus,
 Gruiformes,Rallidae,Eurasian Moorhen,Gallinula chloropus,
 Gruiformes,Rallidae,Eurasian Coot,Fulica atra,
 Gruiformes,Rallidae,White-Breasted Waterhen,Amaurornis phoenicurus,
@@ -141,6 +144,7 @@ Procellariiformes,Procellariidae,Northern Fulmar,Fulmarus glacialis,
 Ciconiiformes,Ciconiidae,White Stork,Ciconia ciconia,
 
 Suliformes,Phalacrocoracidae,Great Cormorant,Phalacrocorax carbo,
+Suliformes,Phalacrocoracidae,European Shag,Gulosus aristotelis,
 
 
 Pelecaniformes,Ardeidae,Eurasian Bittern,Botaurus stellaris,
@@ -160,10 +164,16 @@ Pelecaniformes,Ardeidae,Grey Heron,Ardea cinerea,
 
 Pelecaniformes,Threskiornithidae,Glossy Ibis,Plegadis falcinellus,
 
-
-
+Accipitriformes,Accipitridae,Crested Serpent-Eagle,Spilornis cheela,
+Accipitriformes,Accipitridae,Booted Eagle,Hieraaetus pennatus,
+Accipitriformes,Accipitridae,Eurasian Sparrowhawk,Accipiter nisus,
+Accipitriformes,Accipitridae,Western Marsh Harrier,Circus aeruginosus,
+Accipitriformes,Accipitridae,Red Kite,Milvus milvus,
 Accipitriformes,Accipitridae,Black Kite,Milvus migrans,
+Accipitriformes,Accipitridae,White-Tailed Eagle,Haliaeetus albicilla,
+Accipitriformes,Accipitridae,White-Bellied Sea-Eagle,Icthyophaga leucogaster,
 Accipitriformes,Accipitridae,Common Buzzard,Buteo buteo,
+Accipitriformes,Accipitridae,Long-Legged Buzzard,Buteo rufinus,
 
 Strigiformes,Tytonidae,Western Barn Owl,Tyto alba,
 
@@ -175,11 +185,15 @@ Strigiformes,Strigidae,Tawny Owl,Strix aluco,
 Bucerotiformes,Upupidae,Common Hoopoe,Upupa epops,
 
 
+
+Coraciiformes,Meropidae,Blue-Cheeked Bee-Eater,Merops persicus,
+
 Coraciiformes,Alcedinidae,Common Kingfisher,Alcedo atthis,
 Coraciiformes,Alcedinidae,White-Throated Kingfisher,Halcyon smyrnensis,
 Coraciiformes,Alcedinidae,Pied Kingfisher,Ceryle rudis,
 
 Piciformes,Megalaimidae,Great Barbet,Psilopogon virens,
+Piciformes,Megalaimidae,Chinese Barbet,Psilopogon faber,
 
 Piciformes,Picidae,Middle Spotted Woodpecker,Dendrocoptes medius,
 Piciformes,Picidae,Great Spotted Woodpecker,Dendrocopos major,
@@ -199,6 +213,7 @@ Psittaciformes,Psittaculidae,Red-Masked Parakeet,Psittacara erythrogenys,
 
 
 
+Passeriformes,Oriolidae,Eurasian Golden Oriole,Oriolus oriolus,
 
 Passeriformes,Dicruridae,Black Drongo,Dicrurus macrocercus,
 Passeriformes,Dicruridae,Hair-Crested Drongo,Dicrurus hottentottus,
@@ -210,12 +225,14 @@ Passeriformes,Laniidae,Woodchat Shrike,Lanius senator,
 
 Passeriformes,Corvidae,Eurasian Jay,Garrulus glandarius,
 Passeriformes,Corvidae,Red-Billed Blue Magpie,Urocissa erythroryncha,
+Passeriformes,Corvidae,Grey Treepie,Dendrocitta formosae,Gray Treepie
 Passeriformes,Corvidae,Maghreb Magpie,Pica mauritanica,
 Passeriformes,Corvidae,Oriental Magpie,Pica serica,
 Passeriformes,Corvidae,Eurasian Magpie,Pica pica,
 Passeriformes,Corvidae,Red-Billed Chough,Pyrrhocorax pyrrhocorax,
 Passeriformes,Corvidae,Yellow-Billed Chough,Pyrrhocorax graculus,Alpine Chough
 Passeriformes,Corvidae,Eurasian Jackdaw,Coloeus monedula,
+Passeriformes,Corvidae,House Crow,Corvus splendens,
 Passeriformes,Corvidae,Rook,Corvus frugilegus,
 Passeriformes,Corvidae,Carrion Crow,Corvus corone,
 Passeriformes,Corvidae,Hooded Crow,Corvus cornix,
@@ -234,6 +251,7 @@ Passeriformes,Alaudidae,Greater Hoopoe-Lark,Alaemon alaudipes,
 Passeriformes,Alaudidae,Thick-Billed Lark,Ramphocoris clotbey,
 Passeriformes,Alaudidae,Bar-Tailed Lark,Ammomanes cinctura,
 Passeriformes,Alaudidae,Desert Lark,Ammomanes deserti,
+Passeriformes,Alaudidae,Wood Lark,Lullula arborea,Woodlark
 Passeriformes,Alaudidae,Eurasian Skylark,Alauda arvensis,
 Passeriformes,Alaudidae,Thekla's Lark,Galerida theklae,
 Passeriformes,Alaudidae,Crested Lark,Galerida cristata,Maghreb Lark
@@ -253,6 +271,8 @@ Passeriformes,Acrocephalidae,Common Reed Warbler,Acrocephalus scirpaceus,
 Passeriformes,Hirundinidae,European Red-Rumped Swallow,Cecropis rufula,
 Passeriformes,Hirundinidae,Eastern Red-Rumped Swallow,Cecropis daurica,
 
+Passeriformes,Pycnonotidae,Chestnut Bulbul,Hemixos castanonotus,
+Passeriformes,Pycnonotidae,Mountain Bulbul,Ixos mcclellandii,
 Passeriformes,Pycnonotidae,Light-Vented Bulbul,Pycnonotus sinensis,Chinese Bulbul
 Passeriformes,Pycnonotidae,Common Bulbul,Pycnonotus barbatus,
 Passeriformes,Pycnonotidae,Red-Whiskered Bulbul,Pycnonotus jocosus,Crested Bulbul
@@ -264,6 +284,8 @@ Passeriformes,Phylloscopidae,Willow Warbler,Phylloscopus trochilus,
 Passeriformes,Phylloscopidae,Common Chiffchaff,Phylloscopus collybita,
 
 Passeriformes,Cettiidae,Cetti's Warbler,Cettia cetti,
+
+Passeriformes,Aegithalidae,Long-Tailed Tit,Aegithalos caudatus,
 
 Passeriformes,Sylviidae,Eurasian Blackcap,Sylvia atricapilla,
 Passeriformes,Sylviidae,Garden Warbler,Sylvia borin,
@@ -345,6 +367,7 @@ Passeriformes,Motacillidae,Grey Wagtail,Motacilla cinerea,
 Passeriformes,Motacillidae,Western Yellow Wagtail,Motacilla flava,
 Passeriformes,Motacillidae,White Wagtail,Motacilla alba,Pied Wagtail
 Passeriformes,Motacillidae,Meadow Pipit,Anthus pratensis,
+Passeriformes,Motacillidae,Tree Pipit,Anthus trivialis,
 
 Passeriformes,Fringillidae,Common Chaffinch,Fringilla coelebs,
 Passeriformes,Fringillidae,African Chaffinch,Fringilla spodiogenys,
