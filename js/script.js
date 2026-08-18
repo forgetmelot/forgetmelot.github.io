@@ -71,7 +71,12 @@ document.addEventListener('DOMContentLoaded', function () {
     Calcariidae: 'longspurs and snow buntings',
     Cinclidae: 'dippers',
     Haematopodidae: 'oystercatchers',
-    Hirundinidae: 'swallows'
+    Hirundinidae: 'swallows',
+    Aegithalidae: 'long-tailed tits',
+    Meropidae: 'bee-eaters',
+    Oriolidae: 'old world orioles',
+    Campephagidae: 'cuckooshrikes',
+    Dicaeidae: 'flowerpeckers',
   };
 
   function isBirdPage() {

@@ -27,6 +27,8 @@ Anseriformes,Anatidae,Tufted Duck,Aythya fuligula,
 Anseriformes,Anatidae,Greater Scaup,Aythya marila,
 Anseriformes,Anatidae,Common Eider,Somateria mollissima,
 Anseriformes,Anatidae,Harlequin Duck,Histrionicus histrionicus,
+Anseriformes,Anatidae,Common Goldeneye,Bucephala clangula,
+Anseriformes,Anatidae,Common Merganser,Mergus merganser,Goosander
 Anseriformes,Anatidae,Red-Breasted Merganser,Mergus serrator,
 
 Galliformes,Phasianidae,Rock Ptarmigan,Lagopus muta,
@@ -49,6 +51,7 @@ Pterocliformes,Pteroclidae,Crowned Sandgrouse,Pterocles coronatus,
 
 Cuculiformes,Cuculidae,Greater Coucal,Centropus sinensis,
 Cuculiformes,Cuculidae,Asian Koel,Eudynamys scolopaceus,
+Cuculiformes,Cuculidae,Plaintive Cuckoo,Cacomantis merulinus,
 Cuculiformes,Cuculidae,Common Cuckoo,Cuculus canorus,
 
 Caprimulgiformes,Caprimulgidae,Egyptian Nightjar,Caprimulgus aegyptius,
@@ -135,6 +138,7 @@ Phoenicopteriformes,Phoenicopteridae,Greater Flamingo,Phoenicopterus roseus,
 
 Podicipediformes,Podicipedidae,Little Grebe,Tachybaptus ruficollis,
 Podicipediformes,Podicipedidae,Red-Necked Grebe,Podiceps grisegena,
+Podicipediformes,Podicipedidae,Great Crested Grebe,Podiceps cristatus,
 Podicipediformes,Podicipedidae,Eared Grebe,Podiceps nigricollis,Black-Necked Grebe
 
 Gaviiformes,Gaviidae,Red-Throated Loon,Gavia stellata,Red-Throated Diver
@@ -211,7 +215,8 @@ Psittaciformes,Psittaculidae,Monk Parakeet,Myiopsitta monachus,
 Psittaciformes,Psittaculidae,Red-Masked Parakeet,Psittacara erythrogenys,
 
 
-
+Passeriformes,Campephagidae,Grey-Chinned Minivet,Pericrocotus solaris,Gray-Chinned Minivet
+Passeriformes,Campephagidae,Scarlet Minivet,Pericrocotus speciosus,
 
 Passeriformes,Oriolidae,Eurasian Golden Oriole,Oriolus oriolus,
 
@@ -263,11 +268,15 @@ Passeriformes,Panuridae,Bearded Reedling,Panurus biarmicus,
 Passeriformes,Cisticolidae,Plain Prinia,Prinia inornata,
 Passeriformes,Cisticolidae,Yellow-Bellied Prinia,Prinia flaviventris,
 Passeriformes,Cisticolidae,Common Tailorbird,Orthotomus sutorius,
+Passeriformes,Cisticolidae,Zitting Cisticola,Cisticola juncidis,
 
 Passeriformes,Acrocephalidae,Eastern Olivaceous Warbler,Iduna pallida,
 Passeriformes,Acrocephalidae,Sedge Warbler,Acrocephalus schoenobaenus,
 Passeriformes,Acrocephalidae,Common Reed Warbler,Acrocephalus scirpaceus,
 
+Passeriformes,Hirundinidae,Bank Swallow,Riparia riparia,
+Passeriformes,Hirundinidae,Barn Swallow,Hirundo rustica,
+Passeriformes,Hirundinidae,Western House-Martin,Delichon urbicum,
 Passeriformes,Hirundinidae,European Red-Rumped Swallow,Cecropis rufula,
 Passeriformes,Hirundinidae,Eastern Red-Rumped Swallow,Cecropis daurica,
 
@@ -300,6 +309,7 @@ Passeriformes,Zosteropidae,Swinhoe's White-Eye,Zosterops simplex,
 Passeriformes,Leiothrichidae,Blue-Winged Minla,Actinodura cyanouroptera,
 Passeriformes,Leiothrichidae,Silver-Eared Mesia,Leiothrix argentauris,
 Passeriformes,Leiothrichidae,Fulvous Chatterer,Argya fulva,Fulvous Babbler
+Passeriformes,Leiothrichidae,Chinese Hwamei,Garrulax canorus,
 Passeriformes,Leiothrichidae,Black-Throated Laughingthrush,Pterorhinus chinensis,
 Passeriformes,Leiothrichidae,Masked Laughingthrush,Pterorhinus perspicillatus,
 
@@ -310,11 +320,13 @@ Passeriformes,Sittidae,Velvet-Fronted Nuthatch,Sitta frontalis,
 Passeriformes,Sittidae,Eurasian Nuthatch,Sitta europaea,
 
 Passeriformes,Certhiidae,Eurasian Treecreeper,Certhia familiaris,
+Passeriformes,Certhiidae,Short-Toed Treecreeper,Certhia brachydactyla,
 
 Passeriformes,Troglodytidae,Eurasian Wren,Troglodytes troglodytes,
 
 Passeriformes,Cinclidae,White-Throated Dipper,Cinclus cinclus,
 
+Passeriformes,Sturnidae,European Starling,Sturnus vulgaris,
 Passeriformes,Sturnidae,Spotless Starling,Sturnus unicolor,
 Passeriformes,Sturnidae,Black-Collared Starling,Gracupica nigricollis,
 Passeriformes,Sturnidae,White-Shouldered Starling,Sturnia sinensis,
@@ -352,7 +364,11 @@ Passeriformes,Muscicapidae,Black Wheatear,Oenanthe leucura,
 Passeriformes,Muscicapidae,White-Crowned Wheatear,Oenanthe leucopyga,
 Passeriformes,Muscicapidae,Mourning Wheatear,Oenanthe lugens,Maghreb Wheatear
 
+Passeriformes,Dicaeidae,Fire-Breasted Flowerpecker,Dicaeum ignipectus,
+Passeriformes,Dicaeidae,Scarlet-Backed Flowerpecker,Dicaeum cruentatum,
+
 Passeriformes,Nectariniidae,Ornate Sunbird,Cinnyris ornatus,
+Passeriformes,Nectariniidae,Fork-Tailed Sunbird,Aethopyga christinae,
 
 Passeriformes,Estrildidae,Scaly-Breasted Munia,Lonchura punctulata,
 Passeriformes,Estrildidae,White-Rumped Munia,Lonchura striata,
@@ -362,12 +378,14 @@ Passeriformes,Prunellidae,Dunnock,Prunella modularis,
 Passeriformes,Passeridae,House Sparrow,Passer domesticus,
 Passeriformes,Passeridae,Desert Sparrow,Passer simplex,
 Passeriformes,Passeridae,Eurasian Tree Sparrow,Passer montanus,
+Passeriformes,Passeridae,Rock Sparrow,Petronia petronia,
 
 Passeriformes,Motacillidae,Grey Wagtail,Motacilla cinerea,
 Passeriformes,Motacillidae,Western Yellow Wagtail,Motacilla flava,
 Passeriformes,Motacillidae,White Wagtail,Motacilla alba,Pied Wagtail
 Passeriformes,Motacillidae,Meadow Pipit,Anthus pratensis,
 Passeriformes,Motacillidae,Tree Pipit,Anthus trivialis,
+Passeriformes,Motacillidae,Rock Pipit,Anthus petrosus,
 
 Passeriformes,Fringillidae,Common Chaffinch,Fringilla coelebs,
 Passeriformes,Fringillidae,African Chaffinch,Fringilla spodiogenys,
