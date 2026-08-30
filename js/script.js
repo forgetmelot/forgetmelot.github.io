@@ -79,6 +79,62 @@ document.addEventListener('DOMContentLoaded', function () {
     Dicaeidae: 'flowerpeckers',
   };
 
+  var ORDER_SUBTEXTS = {
+    Accipitriformes: 'hawks, eagles, and allies',
+    Anseriformes: 'waterfowl',
+    Apodiformes: 'swifts and hummingbirds',
+    Bucerotiformes: 'hornbills, hoopoes, and allies',
+    Caprimulgiformes: 'nightjars and allies',
+    Charadriiformes: 'shorebirds, gulls, and auks',
+    Ciconiiformes: 'storks',
+    Columbiformes: 'pigeons and doves',
+    Coraciiformes: 'kingfishers, bee-eaters, and allies',
+    Cuculiformes: 'cuckoos',
+    Falconiformes: 'falcons and caracaras',
+    Galliformes: 'landfowl',
+    Gaviiformes: 'loons',
+    Gruiformes: 'cranes, rails, and allies',
+    Passeriformes: 'perching birds',
+    Pelecaniformes: 'pelicans, herons, and ibises',
+    Phoenicopteriformes: 'flamingos',
+    Piciformes: 'woodpeckers, barbets, and allies',
+    Podicipediformes: 'grebes',
+    Procellariiformes: 'tubenoses',
+    Psittaciformes: 'parrots',
+    Pterocliformes: 'sandgrouse',
+    Strigiformes: 'owls',
+    Suliformes: 'cormorants, gannets, and allies',
+  };
+
+  function renderStarRatings(root) {
+    var scope = root || document;
+    Array.prototype.slice.call(scope.querySelectorAll('.stars[data-rating]')).forEach(function (container) {
+      var rating = parseInt(container.getAttribute('data-rating'), 10);
+      if (isNaN(rating)) return;
+
+      var max = parseInt(container.getAttribute('data-max'), 10);
+      if (isNaN(max) || max < 1) max = 5;
+      rating = Math.max(0, Math.min(rating, max));
+
+      container.innerHTML = '';
+      container.setAttribute('aria-hidden', 'true');
+
+      for (var i = 1; i <= max; i += 1) {
+        var star = document.createElement('span');
+        star.className = i <= rating ? 'star filled' : 'star';
+        star.textContent = '★';
+        container.appendChild(star);
+      }
+
+      var row = container.closest('.rating-row');
+      if (row) {
+        var label = row.querySelector('.rating-label');
+        var prefix = label ? label.textContent.trim() : 'Rating';
+        row.setAttribute('aria-label', prefix + ': ' + rating + ' out of ' + max);
+      }
+    });
+  }
+
   function isBirdPage() {
     return window.location.pathname.indexOf('/birds/') !== -1;
   }
@@ -306,9 +362,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function buildCatalogHtml(rows) {
     return groupRows(rows).map(function (orderGroup) {
+      var orderSubtext = ORDER_SUBTEXTS[orderGroup.name] || '';
       return [
         '<details class="order-details">',
-        '  <summary class="order-summary"><h1>' + escapeHtml(orderGroup.name) + '</h1></summary>',
+        '  <summary class="order-summary"><h1>' + escapeHtml(orderGroup.name) + (orderSubtext ? ' <span class="subtext">' + escapeHtml(orderSubtext) + '</span>' : '') + '</h1></summary>',
         '  <div class="order-content">',
         orderGroup.families.map(function (familyGroup) {
           var familySubtext = FAMILY_SUBTEXTS[familyGroup.name] || '';
@@ -495,6 +552,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   renderBirdRibbon();
+  renderStarRatings(document);
 
   var dataPromise = loadCatalogData();
 

@@ -140,6 +140,44 @@ function getFamilySubtexts() {
   return familySubtexts;
 }
 
+function getOrderSubtexts() {
+  const content = fs.readFileSync(siteScriptPath, 'utf8');
+  const match = content.match(/var ORDER_SUBTEXTS = \{([\s\S]*?)\n\s*\};/);
+
+  if (!match) {
+    return {};
+  }
+
+  const orderSubtexts = {};
+  const body = match[1];
+
+  body.replace(/^\s*([A-Za-z][A-Za-z0-9_]*):/gm, (fullMatch, orderName) => {
+    orderSubtexts[orderName] = true;
+  });
+
+  return orderSubtexts;
+}
+
+function printMissingOrderDescriptions(birds) {
+  const orderSubtexts = getOrderSubtexts();
+  const presentOrders = [...new Set(
+    birds
+      .filter((bird) => bird.order || bird.Order)
+      .map((bird) => getBirdValue(bird, ['order', 'Order']))
+      .filter(Boolean)
+  )].sort();
+
+  const missingOrderDescriptions = presentOrders.filter((orderName) => !orderSubtexts[orderName]);
+
+  if (!missingOrderDescriptions.length) {
+    console.log('No orders missing description names in js/script.js.');
+    return;
+  }
+
+  console.log('Orders missing description names in js/script.js:');
+  missingOrderDescriptions.forEach((orderName) => console.log(`- ${orderName}`));
+}
+
 function printMissingFamilyDescriptions(birds) {
   const familySubtexts = getFamilySubtexts();
   const presentFamilies = [...new Set(
@@ -265,6 +303,7 @@ function main() {
   const birds = parseCsv(csvText);
 
   printMissingImages();
+  printMissingOrderDescriptions(birds);
   printMissingFamilyDescriptions(birds);
   syncTemplateFile();
   syncExistingBirdPages(birds);
