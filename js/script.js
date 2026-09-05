@@ -6,22 +6,22 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   var FAMILY_SUBTEXTS = {
-    Anatidae: 'ducks, geese, and waterfowl',
+    Anatidae: 'ducks, swans, and geese',
     Podicipedidae: 'grebes',
-    Columbidae: 'pigeons and doves',
-    Phasianidae: 'pheasants, grouse, and friends',
+    Columbidae: 'doves and pigeons',
+    Phasianidae: 'partridges, pheasants, grouse, and friends',
     Cuculidae: 'cuckoos',
     Rallidae: 'rails, gallinules, and coots',
     Gruidae: 'cranes',
     Phalacrocoracidae: 'cormorants and shags',
-    Ardeidae: 'egrets, herons, and bitterns',
+    Ardeidae: 'herons, egrets, and bitterns',
     Threskiornithidae: 'ibises and spoonbills',
     Recurvirostridae: 'stilts and avocets',
     Charadriidae: 'plovers and lapwings',
     Scolopacidae: 'sandpipers and friends',
-    Laridae: 'gulls, terns, and skimmers',
-    Accipitridae: 'hawks, eagles, and kites',
-    Tytonidae: 'barn-owls',
+    Laridae: 'skimmers, noddies, terns, and gulls',
+    Accipitridae: 'kites, old world vultures, eagles, and hawks',
+    Tytonidae: 'bay owls and barn owls',
     Strigidae: 'owls',
     Alcedinidae: 'kingfishers',
     Apodidae: 'swifts',
@@ -30,14 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
     Psittaculidae: 'old world parrots',
     Megalaimidae: 'asian barbets',
     Laniidae: 'shrikes',
-    Panuridae: 'bearded reedling',
+    Panuridae: 'reedling',
     Leiothrichidae: 'laughingthrushes and friends',
-    Muscicapidae: 'old world flycatchers',
+    Muscicapidae: 'chats, old world flycatchers, and friends',
     Zosteropidae: 'white-eyes, yuhinas and friends',
     Sylviidae: 'sylviid warblers and friends',
     Phylloscopidae: 'leaf warblers',
     Cisticolidae: 'cisticolas and friends',
-    Nectariniidae: 'sunbirds and spiderhunters',
+    Nectariniidae: 'spiderhunters and sunbirds',
     Turdidae: 'thrushes and friends',
     Dicruridae: 'drongos',
     Pycnonotidae: 'bulbuls',
@@ -49,30 +49,30 @@ document.addEventListener('DOMContentLoaded', function () {
     Troglodytidae: 'wrens',
     Acrocephalidae: 'reed warblers and friends',
     Cettiidae: 'bush warblers and friends',
-    Estrildidae: 'waxbills and friends',
+    Estrildidae: 'munias, parrotfinches, waxbills, and friends',
     Motacillidae: 'wagtails and pipits',
-    Sturnidae: 'starlings',
-    Passeridae: 'old world sparrows',
+    Sturnidae: 'rhabdornis, starlings, and mynas',
+    Passeridae: 'snowfinches and old world sparrows',
     Corvidae: 'crows, jays, and magpies',
     Emberizidae: 'old world buntings',
     Alaudidae: 'larks',
-    Alcidae: 'auks, murres, and puffins',
+    Alcidae: 'auks, puffins, and murres',
     Picidae: 'woodpeckers',
     Prunellidae: 'accentors',
-    Caprimulgidae: 'nightjars and friends',
+    Caprimulgidae: 'nightjars and nighthawks',
     Ciconiidae: 'storks',
     Falconidae: 'falcons and caracaras',
     Gaviidae: 'loons',
-    Glareolidae: 'pratincoles and coursers',
+    Glareolidae: 'coursers and pratincoles',
     Phoenicopteridae: 'flamingos',
-    Procellariidae: 'shearwaters and petrels',
+    Procellariidae: 'petrels, shearwaters, and diving petrels',
     Pteroclidae: 'sandgrouse',
-    Stercorariidae: 'skuas and jaegers',
+    Stercorariidae: 'jaegers and skuas',
     Calcariidae: 'longspurs and snow buntings',
     Cinclidae: 'dippers',
     Haematopodidae: 'oystercatchers',
     Hirundinidae: 'swallows',
-    Aegithalidae: 'long-tailed tits',
+    Aegithalidae: 'tit-warblers, bushtits, and long-tailed tit',
     Meropidae: 'bee-eaters',
     Oriolidae: 'old world orioles',
     Campephagidae: 'cuckooshrikes',
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Piciformes: 'woodpeckers, and friends',
     Podicipediformes: 'grebes',
     Procellariiformes: 'tubenoses',
-    Psittaciformes: 'parrots',
+    Psittaciformes: 'old world parrots',
     Pterocliformes: 'sandgrouse',
     Strigiformes: 'owls',
     Suliformes: 'gannets, cormorants, and friends',
@@ -245,7 +245,8 @@ document.addEventListener('DOMContentLoaded', function () {
         file: slugifySpeciesName(speciesName) + '.html',
         title: speciesName,
         scientific: row.scientific_name || '',
-        otherNames: row.other_name || ''
+        otherNames: row.other_name || '',
+        hiddenSearchable: row['hidden searchable'] || row.hidden_searchable || ''
       };
     });
   }
@@ -513,7 +514,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var fileMatch = normalizeSearchText(entry.file).indexOf(query) !== -1;
         var scientificMatch = entry.scientific && normalizeSearchText(entry.scientific).indexOf(query) !== -1;
         var otherNamesMatch = entry.otherNames && normalizeSearchText(entry.otherNames).indexOf(query) !== -1;
-        return titleMatch || fileMatch || scientificMatch || otherNamesMatch;
+        var hiddenSearchableMatch = entry.hiddenSearchable && normalizeSearchText(entry.hiddenSearchable).indexOf(query) !== -1;
+        return titleMatch || fileMatch || scientificMatch || otherNamesMatch || hiddenSearchableMatch;
       });
 
       renderSearchResults(resultsEl, matches, query);
@@ -828,3 +830,30 @@ document.addEventListener('DOMContentLoaded', function () {
     applyBirdPageEnhancements();
   }
 });
+
+function getSearchTextFromBirdPage(pageElement) {
+  const visibleText = pageElement.textContent || '';
+  const hiddenSearchableText = Array.from(
+    pageElement.querySelectorAll('.hidden-searchable')
+  )
+    .map((el) => el.textContent || '')
+    .join(' ');
+
+  return `${visibleText} ${hiddenSearchableText}`.toLowerCase();
+}
+
+function getBirdSearchText(bird) {
+  return [
+    bird.species,
+    bird.scientific_name,
+    bird.other_name,
+    bird.hidden_searchable,
+    bird['hidden searchable'],
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+}
+
+// wherever filtering happens:
+const matches = getBirdSearchText(bird).includes(query);

@@ -256,46 +256,99 @@ function syncTemplateFile() {
   }
 }
 
-function syncExistingBirdPages(birds) {
-  const birdBySlug = new Map(
-    birds
-      .filter((bird) => bird.species)
-      .map((bird) => [slugifySpeciesName(bird.species), bird])
-  );
+function applyOtherNames(content, otherNames) {
+  const otherNamesLine = `<p class="other-names">Other names: ${otherNames}</p>`;
 
-  fs.readdirSync(birdsDir)
-    .filter((fileName) => fileName.endsWith('.html') && fileName !== 'template.html')
-    .forEach((fileName) => {
-      const bird = birdBySlug.get(fileName.replace(/\.html$/, ''));
-      if (!bird) return;
+  if (otherNames) {
+    if (/<p class="other-names">[\s\S]*?<\/p>/.test(content)) {
+      return content.replace(/<p class="other-names">[\s\S]*?<\/p>/, otherNamesLine);
+    }
 
-      const filePath = path.join(birdsDir, fileName);
-      const original = fs.readFileSync(filePath, 'utf8');
+    if (/<h2 class="latin">[\s\S]*?<\/h2>/.test(content)) {
+      return content.replace(
+        /(<h2 class="latin">[\s\S]*?<\/h2>)/,
+        `$1\n          ${otherNamesLine}`
+      );
+    }
 
-      const order = getBirdValue(bird, ['order', 'Order']);
-      const family = getBirdValue(bird, ['family', 'Family']);
-      const updated = ensureTaxonomyLines(original, order, family);
+    return content;
+  }
 
-      if (updated !== original) {
-        fs.writeFileSync(filePath, updated, 'utf8');
-      }
-    });
+  return content.replace(/\n?[ \t]*<p class="other-names">[\s\S]*?<\/p>\n?/m, '\n');
+}
+
+function applyHiddenSearchable(content, hiddenSearchable) {
+  const hiddenLine = `<p class="hidden-searchable">${hiddenSearchable}</p>`;
+
+  if (hiddenSearchable) {
+    if (/<p class="hidden-searchable">[\s\S]*?<\/p>/.test(content)) {
+      return content.replace(
+        /<p class="hidden-searchable">[\s\S]*?<\/p>/,
+        hiddenLine
+      );
+    }
+
+    if (/<p class="other-names">[\s\S]*?<\/p>/.test(content)) {
+      return content.replace(
+        /(<p class="other-names">[\s\S]*?<\/p>)/,
+        `$1\n          ${hiddenLine}`
+      );
+    }
+
+    if (/<h2 class="latin">[\s\S]*?<\/h2>/.test(content)) {
+      return content.replace(
+        /(<h2 class="latin">[\s\S]*?<\/h2>)/,
+        `$1\n          ${hiddenLine}`
+      );
+    }
+
+    return content;
+  }
+
+  return content.replace(/\n?[ \t]*<p class="hidden-searchable">[\s\S]*?<\/p>\n?/m, '\n');
+}
+
+function updateBirdPageContent(content, bird) {
+  const title = bird.species || '';
+  const scientificName = bird.scientific_name || 'Scientific';
+  const otherNames = (bird.other_name || '').trim();
+  const hiddenSearchable = (
+    getBirdValue(bird, ['hidden_searchable', 'hidden searchable'])
+  ).trim();
+  const order = getBirdValue(bird, ['order', 'Order']);
+  const family = getBirdValue(bird, ['family', 'Family']);
+
+  let updated = content
+    .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
+    .replace(/<h1>[^<]*<\/h1>/, `<h1>${title}</h1>`)
+    .replace(/<h2 class="latin">[^<]*<\/h2>/, `<h2 class="latin">${scientificName}</h2>`);
+
+  updated = applyOtherNames(updated, otherNames);
+  updated = applyHiddenSearchable(updated, hiddenSearchable);
+  updated = ensureTaxonomyLines(updated, order, family);
+  return updated;
 }
 
 function fillTemplate(template, bird) {
   const title = bird.species;
   const scientificName = bird.scientific_name || 'Scientific';
-  const otherNames = bird.other_name ? `Other names: ${bird.other_name}` : 'Other names:';
+  const otherNames = (bird.other_name || '').trim();
+  const hiddenSearchable = (
+    getBirdValue(bird, ['hidden_searchable', 'hidden searchable'])
+  ).trim();
   const order = getBirdValue(bird, ['order', 'Order']);
   const family = getBirdValue(bird, ['family', 'Family']);
 
-  return template
+  let output = template
     .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
     .replace(/<h1>[^<]*<\/h1>/, `<h1>${title}</h1>`)
     .replace(/<h2 class="latin">[^<]*<\/h2>/, `<h2 class="latin">${scientificName}</h2>`)
-    .replace(/<p class="other-names">[^<]*<\/p>/, `<p class="other-names">${otherNames}</p>`)
     .replace(/{{order}}/g, order)
     .replace(/{{family}}/g, family);
+
+  output = applyOtherNames(output, otherNames);
+  output = applyHiddenSearchable(output, hiddenSearchable);
+  return output;
 }
 
 function main() {
@@ -336,6 +389,29 @@ function main() {
 
   console.log(`Created ${createdFiles.length} bird page${createdFiles.length === 1 ? '' : 's'}:`);
   createdFiles.forEach((fileName) => console.log(`- birds/${fileName}`));
+}
+
+function syncExistingBirdPages(birds) {
+  const birdBySlug = new Map(
+    birds
+      .filter((bird) => bird.species)
+      .map((bird) => [slugifySpeciesName(bird.species), bird])
+  );
+
+  fs.readdirSync(birdsDir)
+    .filter((fileName) => fileName.endsWith('.html') && fileName !== 'template.html')
+    .forEach((fileName) => {
+      const bird = birdBySlug.get(fileName.replace(/\.html$/, ''));
+      if (!bird) return;
+
+      const filePath = path.join(birdsDir, fileName);
+      const original = fs.readFileSync(filePath, 'utf8');
+      const updated = updateBirdPageContent(original, bird);
+
+      if (updated !== original) {
+        fs.writeFileSync(filePath, updated, 'utf8');
+      }
+    });
 }
 
 main();
