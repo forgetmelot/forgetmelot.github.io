@@ -1,64 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>birds</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/jpeg" sizes="32x32" href="images/me-favicon.png">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/jpeg"
+      sizes="32x32"
+      href="images/me-favicon.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-container">
+        <a class="brand" href="index.html">forget me lot birding</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="me.html">about me</a></li>
+            <li><a href="index.html" class="lucky">surprise bird!</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-</head>
-<body>
-    
-  <header class="site-header">
-    <div class="nav-container">
-      <a class="brand" href="index.html">forget me lot birding</a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="me.html">about me</a></li>
-          <li><a href="index.html" class="lucky">surprise bird!</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <section class="about-section">
+      <div class="about-image-wrapper">
+        <img src="images/me.jpg" class="about-image" />
+      </div>
+      <div class="about-text">
+        <h1 class="about-heading">Jasmine Chan</h1>
+        <p>
+          <span class="about-copy-block">
+            <span class="about-copy-line">This individual is a human,</span>
+            <span class="about-copy-line"
+              >the sole extant species of the genus <em>Homo</em>.</span
+            >
+            <span class="about-copy-line"
+              >It is unusually capable of the language</span
+            >
+            <span class="about-copy-line">you are prone to daily.</span>
+          </span>
+          <span class="about-copy-block">
+            <span class="about-copy-line">In its words,<br /></span>
+            <span class="about-copy-line"
+              >"Hi, I love birds but can't code.</span
+            >
+            <span class="about-copy-line">This page is not about me.</span>
+            <span class="about-copy-line"
+              >Go read about the <a href="index.html">birds</a>."</span
+            >
+          </span>
+        </p>
 
-  
-  <section class="about-section">
-    <div class="about-image-wrapper">
-      <img src="images/me.jpg" class="about-image">
-    </div>
-    <div class="about-text">
-      <h1 class="about-heading">Jasmine Chan</h1>
-      <p>This individual is a human,<br>
-        the sole extant species of the genus <em>Homo</em>.<br>
-        It is unusually capable of the language<br>
-        you are prone to daily.<br><br>
-        In its words,<br>
-
-        "hi, i love birds but can't code.<br>
-        this page is not about me.<br>
-        go read about the <a href="index.html">birds</a>."
-      </p>
-
-      <div class="ratings about-ratings">
-        <div class="rating rating-row">
-          <div class="rating-label">Difficulty to photograph</div>
-          <div class="stars" data-rating="5"></div>
-          <div class="note-box">
-            A silent, skulking individual,<br>
-            whose likeness is copyrighted.<br>
-            Rarely appears in the cafeteria.<br>
-          Perhaps try <a href="mailto:chan.sumyin@gmail.com">sending a message</a>?</div>
+        <div class="ratings about-ratings">
+          <div
+            class="rating rating-row"
+            data-tags="Skittish, Skulky, Night owl"
+          >
+            <div class="rating-label">Difficulty to photograph</div>
+            <div class="stars" data-rating="5"></div>
+            <div class="note-box">
+              <span class="note-line">Rarely appears in the cafeteria.</span>
+              <span class="note-line">
+                Try
+                <a href="mailto:chan.sumyin@gmail.com">sending a message</a>?
+              </span>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
+    <section class="about-faq" aria-label="About this page">
+      <details class="about-faq-details">
+        <summary>On rarity ratings</summary>
+        <p>
+          Who doesn't want shiny Pokémon? Who doesn't want to say "I have found
+          a rare bird"? But I won't do rarity justice if I just slapped on a few
+          stars and called it a day.<br />
+          <br />
+          Rarity is not a unitary construct. Being in different locations gives
+          different impressions of rarity. Some birds are locally abundant but
+          globally less so. Others are not abundant throughout their extensive
+          range. Vagrants that attract hundreds of twitchers, might be garden
+          birds elsewhere. The sampling context also matters. Bird ringers
+          probably find more skulky species than mere visual observers. Heck,
+          even birding in a group rather than alone makes it more likely to spot
+          a bird! Many species are also more easily observed at particular times
+          of the year and times of the day.<br />
+          <br />
+          It may be best to refrain from describing a species as rare. Instead,
+          rarity is relevant to <em>events</em>, i.e. it is rare to observe this
+          bird at this place at this time, which isn't very fun to talk about.
+          Thus, as of now, I will not do rarity ratings until I have thought of
+          a better way to break it down.
+        </p>
+      </details>
+      <details class="about-faq-details">
+        <summary>On photography</summary>
+        <p>
+          Apologies for images with subpar quality. I find it satisfying enough
+          to just get a record shot, and do not bother with getting the perfect
+          photo. Alas, I do realise the importance of learning proper camera
+          techniques. Why am I taking crappy photos, if not having a skill
+          issue? I shall try to get into a photography bootcamp.
+        </p>
+      </details>
+    </section>
 
-    </div>
-  </section>
-
-  <script src="js/script.js"></script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>

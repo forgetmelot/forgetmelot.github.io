@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Oriolidae: 'old world orioles',
     Campephagidae: 'cuckooshrikes',
     Dicaeidae: 'flowerpeckers',
+    Monarchidae: 'monarch flycatchers, paradise flycatchers, and shrikebills',
   };
 
   var ORDER_SUBTEXTS = {
@@ -106,6 +107,35 @@ document.addEventListener('DOMContentLoaded', function () {
     Suliformes: 'gannets, cormorants, and friends',
   };
 
+  var BIRD_TAG_OPTIONS = {
+    Skittish: 'Easily startled.',
+    Reserved: 'Stays at a reasonable distance.',
+    Approachable: 'Can be approached closely.',
+    
+    Speeder: 'Likely seen flying at high speeds; can be difficult to photograph.',
+    Flyover: 'Likely seen flying at moderate speeds.',
+    'Fast hopper': 'Moves quickly in the vegetation, easily obscured; can be difficult to photograph.',
+
+    Percher: 'Likely seen perched in the open; easily found.',
+    Skulky: 'Stays hidden in dense cover; can be difficult to spot.',
+    Overlooked: 'Easily evades attention, due to drab plumage or resemblance to more common species.',
+
+    Distant: 'Likely seen at a distance.',
+    'Warbler neck': 'Likely appears in tall trees; can give backlit and distant views.',
+
+    Flock: 'Likely found in a group with other birds.',
+    'Needle in a haystack': 'Small numbers of this species is found along many individuals of a similar-looking species.',
+
+    Camouflaged: 'Blends in with surroundings; can be difficult to spot.',
+
+    'Angry bird ear': 'Would be helpful to listen for its call to locate the bird.',
+
+    'Night owl': 'More active at night. Look for roosting individuals during the day.',
+    Danger: 'Be careful! This bird might attack.'
+  };
+  var PERSONALITY_TAGS = ['Skittish', 'Reserved', 'Approachable'];
+
+
   function renderStarRatings(root) {
     var scope = root || document;
     Array.prototype.slice.call(scope.querySelectorAll('.stars[data-rating]')).forEach(function (container) {
@@ -133,6 +163,64 @@ document.addEventListener('DOMContentLoaded', function () {
         row.setAttribute('aria-label', prefix + ': ' + rating + ' out of ' + max);
       }
     });
+  }
+
+  function renderBirdTags() {
+    var ratingRow = document.querySelector('.rating-row');
+    if (!ratingRow || ratingRow.querySelector('.bird-tags')) return;
+
+    var pageLabels = (ratingRow.getAttribute('data-tags') || '')
+      .split(',')
+      .map(function (label) { return label.trim(); })
+      .filter(function (label) {
+        return label && Object.prototype.hasOwnProperty.call(BIRD_TAG_OPTIONS, label);
+      });
+    var labels = Object.keys(BIRD_TAG_OPTIONS).filter(function (label) {
+      return pageLabels.indexOf(label) !== -1;
+    });
+    ratingRow.setAttribute('data-tags', labels.join(', '));
+    if (!labels.length) return;
+
+    var tags = document.createElement('div');
+    tags.className = 'bird-tags';
+    var dialog = createBirdTagDialog();
+
+    labels.forEach(function (label) {
+      var tag = document.createElement('button');
+      tag.className = 'bird-tag' + (label === 'danger' ? ' bird-tag--danger' : '');
+      tag.type = 'button';
+      tag.textContent = label;
+      tag.addEventListener('click', function () {
+        var isPersonalityTag = PERSONALITY_TAGS.indexOf(label) !== -1;
+        var dialogTitle = isPersonalityTag ? 'Personality' : label;
+        var dialogCopy = isPersonalityTag
+          ? PERSONALITY_TAGS.map(function (personalityTag) {
+            return personalityTag + ': ' + BIRD_TAG_OPTIONS[personalityTag];
+          }).join('\n')
+          : BIRD_TAG_OPTIONS[label];
+        dialog.querySelector('.bird-tag-dialog-title').textContent = dialogTitle;
+        dialog.querySelector('.bird-tag-dialog-copy').textContent = dialogCopy;
+        dialog.showModal();
+      });
+      tags.appendChild(tag);
+    });
+
+    ratingRow.appendChild(tags);
+  }
+
+  function createBirdTagDialog() {
+    var dialog = document.createElement('dialog');
+    dialog.className = 'bird-tag-dialog';
+    dialog.innerHTML = [
+      '<button class="bird-tag-dialog-close" type="button" aria-label="Close tag explanation">×</button>',
+      '<h2 class="bird-tag-dialog-title"></h2>',
+      '<p class="bird-tag-dialog-copy"></p>',
+    ].join('');
+    dialog.querySelector('.bird-tag-dialog-close').addEventListener('click', function () {
+      dialog.close();
+    });
+    document.body.appendChild(dialog);
+    return dialog;
   }
 
   function isBirdPage() {
@@ -555,6 +643,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   renderBirdRibbon();
   renderStarRatings(document);
+  renderBirdTags();
 
   var dataPromise = loadCatalogData();
 

@@ -131,7 +131,7 @@ h2 {
 /* About me */
 .about-section {
   max-width: 900px;
-  margin: 24px auto;
+  margin: 24px auto 8px;
   display: flex;
   gap: 24px;
   align-items: flex-start;
@@ -159,9 +159,53 @@ h2 {
 .about-text p {
   margin: 0;
 }
+.about-copy-block {
+  display: block;
+}
+.about-copy-block + .about-copy-block {
+  margin-top: 1em;
+}
+.about-copy-line {
+  display: inline;
+}
+.about-copy-line + .about-copy-line::before {
+  content: ' ';
+}
 
 .about-ratings {
-  margin-top: 24px;
+  margin: 24px 0 8px;
+}
+.about-text .about-ratings {
+  margin-bottom: 0px;
+}
+
+.about-faq {
+  max-width: 900px;
+  margin: 8px auto 28px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+.about-faq-details summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding: 14px 36px 14px 0;
+  font-weight: 700;
+}
+.about-faq-details summary::-webkit-details-marker {
+  display: none;
+}
+.about-faq-details summary::after {
+  content: '▾';
+  position: absolute;
+  right: 0;
+  transition: transform .2s ease;
+}
+.about-faq-details[open] summary::after {
+  transform: rotate(180deg);
+}
+.about-faq-details p {
+  margin: 0 36px 16px 0;
 }
 
 
@@ -425,7 +469,79 @@ h2 {
   border-radius: 0;
   color: #333;
   margin: 0 0 12px 0;
-  line-height: 1.6;
+}
+.rating-row[data-tags] .note-box {
+  margin-bottom: 0;
+}
+
+.bird-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+}
+.bird-tag {
+  border: 1px solid #d6d6d6;
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: transparent;
+  color: #666666;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.bird-tag:hover {
+  border-color: #8f0e3d;
+  color: #8f0e3d;
+}
+.bird-tag--danger,
+.bird-tag--danger:hover {
+  border-color: #b3261e;
+  color: #b3261e;
+}
+.bird-tag-dialog {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(360px, calc(100% - 32px));
+  border: 1px solid #d6d6d6;
+  border-radius: 6px;
+  padding: 24px;
+  background: #ffffff;
+  color: #222222;
+}
+.bird-tag-dialog::backdrop {
+  background: rgb(34 34 34 / 25%);
+}
+.bird-tag-dialog-title {
+  margin: 0 32px 8px 0;
+  font-size: 1.2rem;
+}
+.bird-tag-dialog-copy {
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+.bird-tag-dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 0;
+  padding: 2px 6px;
+  background: transparent;
+  color: #666666;
+  font: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.note-line {
+  display: inline;
+}
+.note-line + .note-line::before {
+  content: ' ';
 }
 
 .location-line {
@@ -695,6 +811,21 @@ h2 {
   }
   .about-ratings .stars {
     justify-content: center;
+  }
+  .about-section .bird-tags {
+    justify-content: center;
+  }
+  .about-copy-line {
+    display: block;
+  }
+  .about-copy-line + .about-copy-line::before {
+    content: none;
+  }
+  .note-line {
+    display: block;
+  }
+  .note-line + .note-line::before {
+    content: none;
   }
 
   .site-title {

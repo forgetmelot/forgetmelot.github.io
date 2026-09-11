@@ -108,6 +108,63 @@ function getExistingImageNames() {
   );
 }
 
+function getBirdTagOptions() {
+  const content = fs.readFileSync(siteScriptPath, 'utf8');
+  const match = content.match(/var BIRD_TAG_OPTIONS = \{([\s\S]*?)\n\s*\};/);
+
+  if (!match) {
+    return new Set();
+  }
+
+  const options = new Set();
+  const keyPattern = /^\s*(?:'([^']+)'|([A-Za-z][A-Za-z0-9_]*))\s*:/gm;
+  let keyMatch;
+
+  while ((keyMatch = keyPattern.exec(match[1])) !== null) {
+    options.add(keyMatch[1] || keyMatch[2]);
+  }
+
+  return options;
+}
+
+function printUnrenderedTags() {
+  const tagOptions = getBirdTagOptions();
+  const pageFiles = fs.readdirSync(birdsDir)
+    .filter((fileName) => fileName.endsWith('.html') && fileName !== 'template.html')
+    .map((fileName) => path.join(birdsDir, fileName));
+  const mePagePath = path.join(projectRoot, 'me.html');
+  if (fs.existsSync(mePagePath)) pageFiles.push(mePagePath);
+
+  const unrenderedTags = [];
+  const dataTagsPattern = /data-tags\s*=\s*["']([^"']*)["']/g;
+
+  pageFiles.forEach((filePath) => {
+    const content = fs.readFileSync(filePath, 'utf8');
+    let match;
+
+    while ((match = dataTagsPattern.exec(content)) !== null) {
+      match[1]
+        .split(',')
+        .map((tag) => tag.trim())
+        .filter((tag) => tag && !tagOptions.has(tag))
+        .forEach((tag) => {
+          unrenderedTags.push({
+            fileName: path.relative(projectRoot, filePath),
+            tag,
+          });
+        });
+    }
+  });
+
+  if (!unrenderedTags.length) {
+    console.log('No tags mentioned without a matching global option.');
+    return;
+  }
+
+  console.log('Tags mentioned but not rendered from the global options:');
+  unrenderedTags.forEach(({ fileName, tag }) => console.log(`- ${fileName}: ${tag}`));
+}
+
 function printMissingImages() {
   const referencedImages = getImageReferencesFromBirdPages();
   const existingImages = getExistingImageNames();
@@ -356,6 +413,7 @@ function main() {
   const birds = parseCsv(csvText);
 
   printMissingImages();
+  printUnrenderedTags();
   printMissingOrderDescriptions(birds);
   printMissingFamilyDescriptions(birds);
   syncTemplateFile();
