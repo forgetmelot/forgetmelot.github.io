@@ -263,7 +263,7 @@ function getBirdValue(bird, keys) {
 }
 
 function buildTaxonomyLines(order, family, indent = '') {
-  const lineIndent = indent || '  ';
+  const lineIndent = indent || '          ';
   return [
     `${lineIndent}<p class="taxonomy">Order: ${order}</p>`,
     `${lineIndent}<p class="taxonomy">Family: ${family}</p>`,
@@ -272,32 +272,29 @@ function buildTaxonomyLines(order, family, indent = '') {
 
 function getIndentation(content, pattern) {
   const match = content.match(pattern);
-  if (!match) return '';
-  return match[1] || '';
+  return match ? match[1] : '';
 }
 
 function ensureTaxonomyLines(content, order, family) {
-  const taxonomyPattern = /(?:\n)([ \t]*)<p class="taxonomy">Order:[\s\S]*?\n\1<p class="taxonomy">Family:[\s\S]*?<\/p>/m;
-
+  const taxonomyPattern = /\n([ \t]*)<p class="taxonomy">Order:[\s\S]*?\n\1<p class="taxonomy">Family:[\s\S]*?<\/p>/m;
   const anchorIndent = getIndentation(content, /^(\s*)<p class="other-names">/m)
     || getIndentation(content, /^(\s*)<h2 class="latin">/m)
-    || '';
-
+    || '          ';
   const taxonomyLines = buildTaxonomyLines(order, family, anchorIndent);
 
   if (taxonomyPattern.test(content)) {
-    return content.replace(taxonomyPattern, () => `\n${buildTaxonomyLines(order, family, anchorIndent)}`);
+    return content.replace(taxonomyPattern, `\n${taxonomyLines}`);
   }
 
-  const insertAfterOtherNames = /(<p class="other-names">[\s\S]*?<\/p>)/m;
-  const insertAfterLatin = /(<h2 class="latin">[\s\S]*?<\/h2>)/m;
+  const otherNamesPattern = /(<p class="other-names">[\s\S]*?<\/p>)/m;
+  const latinPattern = /(<h2 class="latin">[\s\S]*?<\/h2>)/m;
 
-  if (insertAfterOtherNames.test(content)) {
-    return content.replace(insertAfterOtherNames, `$1\n${taxonomyLines}`);
+  if (otherNamesPattern.test(content)) {
+    return content.replace(otherNamesPattern, `$1\n${taxonomyLines}`);
   }
 
-  if (insertAfterLatin.test(content)) {
-    return content.replace(insertAfterLatin, `$1\n${taxonomyLines}`);
+  if (latinPattern.test(content)) {
+    return content.replace(latinPattern, `$1\n${taxonomyLines}`);
   }
 
   return content;

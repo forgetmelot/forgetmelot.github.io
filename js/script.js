@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     labels.forEach(function (label) {
       var tag = document.createElement('button');
-      tag.className = 'bird-tag' + (label === 'danger' ? ' bird-tag--danger' : '');
+      tag.className = 'bird-tag' + (label === 'Danger' ? ' bird-tag--danger' : '');
       tag.type = 'button';
       tag.textContent = label;
       tag.addEventListener('click', function () {
@@ -385,8 +385,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var existingContainer = document.querySelector('.back-link-container');
     if (existingContainer) {
       existingContainer.replaceWith(nav);
-    } else {
-      main.append(nav);
     }
   }
 
