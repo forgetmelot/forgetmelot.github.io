@@ -109,12 +109,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var BIRD_TAG_OPTIONS = {
     Skittish: 'Easily startled.',
-    Reserved: 'Stays at a reasonable distance.',
+    Reserved: 'Stays at a reasonable distance, just minding their own business.',
     Approachable: 'Can be approached closely.',
     
     Speeder: 'Likely seen flying at high speeds; can be difficult to photograph.',
-    Flyover: 'Likely seen flying at moderate speeds.',
-    'Fast hopper': 'Moves quickly in the vegetation, easily obscured; can be difficult to photograph.',
+    Flyover: 'More likely seen flying. Moderate speeds.',
+    Hopper: 'Moves quickly in the vegetation, easily obscured; can be difficult to photograph.',
+    Runner: 'Moves quickly on the ground; can be difficult to photograph.',
 
     Percher: 'Likely seen perched in the open; easily found.',
     Skulky: 'Stays hidden in dense cover; can be difficult to spot.',
@@ -124,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
     'Warbler neck': 'Likely appears in tall trees; can give backlit and distant views.',
 
     Flock: 'Likely found in a group with other birds.',
-    'Needle in a haystack': 'Small numbers of this species is found along many individuals of a similar-looking species.',
 
     Camouflaged: 'Blends in with surroundings; can be difficult to spot.',
 
