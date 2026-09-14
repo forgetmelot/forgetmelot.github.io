@@ -193,13 +193,20 @@ document.addEventListener('DOMContentLoaded', function () {
       tag.addEventListener('click', function () {
         var isPersonalityTag = PERSONALITY_TAGS.indexOf(label) !== -1;
         var dialogTitle = isPersonalityTag ? 'Personality' : label;
-        var dialogCopy = isPersonalityTag
-          ? PERSONALITY_TAGS.map(function (personalityTag) {
-            return personalityTag + ': ' + BIRD_TAG_OPTIONS[personalityTag];
-          }).join('\n')
-          : BIRD_TAG_OPTIONS[label];
+        var dialogCopy = dialog.querySelector('.bird-tag-dialog-copy');
         dialog.querySelector('.bird-tag-dialog-title').textContent = dialogTitle;
-        dialog.querySelector('.bird-tag-dialog-copy').textContent = dialogCopy;
+        dialogCopy.textContent = '';
+        if (isPersonalityTag) {
+          PERSONALITY_TAGS.forEach(function (personalityTag, index) {
+            if (index > 0) dialogCopy.appendChild(document.createElement('br'));
+            var descriptor = document.createElement('strong');
+            descriptor.textContent = personalityTag;
+            dialogCopy.appendChild(descriptor);
+            dialogCopy.appendChild(document.createTextNode(': ' + BIRD_TAG_OPTIONS[personalityTag]));
+          });
+        } else {
+          dialogCopy.textContent = BIRD_TAG_OPTIONS[label];
+        }
         dialog.showModal();
       });
       tags.appendChild(tag);

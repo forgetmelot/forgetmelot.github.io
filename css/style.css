@@ -535,6 +535,17 @@ h2 {
   font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.bird-tag-dialog-close:focus {
+  outline: none;
+  box-shadow: none;
+}
+.bird-tag-dialog-close:focus-visible {
+  outline: 2px solid #8f0e3d;
+  outline-offset: 2px;
 }
 
 .note-line {
