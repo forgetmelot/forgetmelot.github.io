@@ -1,4 +1,4 @@
-order,family,species,scientific_name,other_name,hidden searchable
+order,family,species,scientific_name,other_name,hidden_searchable
 Anseriformes,Anatidae,Greylag Goose,Anser anser,,Graylag Goose
 Anseriformes,Anatidae,Greater White-fronted Goose,Anser albifrons,
 Anseriformes,Anatidae,Tundra Bean Goose,Anser serrirostris,
@@ -15,6 +15,7 @@ Anseriformes,Anatidae,Muscovy Duck,Cairina moschata,
 Anseriformes,Anatidae,Mandarin Duck,Aix galericulata,
 Anseriformes,Anatidae,Maned Duck,Chenonetta jubata,"Australian Wood Duck, Maned Goose"
 Anseriformes,Anatidae,Gadwall,Mareca strepera,
+Anseriformes,Anatidae,Garganey,Spatula querquedula,
 Anseriformes,Anatidae,Northern Shoveler,Spatula clypeata,
 Anseriformes,Anatidae,Eurasian Wigeon,Mareca penelope,
 Anseriformes,Anatidae,Chiloe Wigeon,Mareca sibilatrix,
@@ -41,6 +42,7 @@ Columbiformes,Columbidae,Common Wood Pigeon,Columba palumbus,
 Columbiformes,Columbidae,Stock Dove,Columba oenas,
 Columbiformes,Columbidae,European Turtle Dove,Streptopelia turtur,
 Columbiformes,Columbidae,Eurasian Collared Dove,Streptopelia decaocto,
+Columbiformes,Columbidae,Red Collared Dove,Streptopelia tranquebarica,
 Columbiformes,Columbidae,Spotted Dove,Spilopelia chinensis,
 Columbiformes,Columbidae,Laughing Dove,Spilopelia senegalensis,
 Columbiformes,Columbidae,Asian Emerald Dove,Chalcophaps indica,
@@ -66,21 +68,25 @@ Apodiformes,Apodidae,House Swift,Apus nipalensis,
 
 Gruiformes,Gruidae,Common Crane,Grus grus,
 Gruiformes,Rallidae,Water Rail,Rallus aquaticus,
-Gruiformes,Rallidae,Eurasian Moorhen,Gallinula chloropus,
+Gruiformes,Rallidae,Eurasian Moorhen,Gallinula chloropus,Common Moorhen
 Gruiformes,Rallidae,Eurasian Coot,Fulica atra,
 Gruiformes,Rallidae,White-breasted Waterhen,Amaurornis phoenicurus,
+Gruiformes,Rallidae,Baillon's Crake,Zapornia pusilla,
 
 
 Charadriiformes,Haematopodidae,Eurasian Oystercatcher,Haematopus ostralegus,
 
 Charadriiformes,Charadriidae,Grey Plover,Pluvialis squatarola,Black-bellied Plover,Gray Plover
 Charadriiformes,Charadriidae,European Golden Plover,Pluvialis apricaria,
+Charadriiformes,Charadriidae,Pacific Golden Plover,Pluvialis fulva,
 Charadriiformes,Charadriidae,Common Ringed Plover,Charadrius hiaticula,
 Charadriiformes,Charadriidae,Little Ringed Plover,Thinornis dubius,
 Charadriiformes,Charadriidae,Northern Lapwing,Vanellus vanellus,
 Charadriiformes,Charadriidae,Tibetan Sand Plover,Anarhynchus atrifrons,
 Charadriiformes,Charadriidae,Greater Sand Plover,Anarhynchus leschenaultii,
 Charadriiformes,Charadriidae,Kentish Plover,Anarhynchus alexandrinus,
+
+Charadriiformes,Jacanidae,Pheasant-tailed Jacana,Hydrophasianus chirurgus,
 
 Charadriiformes,Scolopacidae,Eurasian Whimbrel,Numenius phaeopus,
 Charadriiformes,Scolopacidae,Eurasian Curlew,Numenius arquata,
@@ -167,6 +173,7 @@ Pelecaniformes,Ardeidae,Little Egret,Egretta garzetta,
 Pelecaniformes,Ardeidae,Little Heron,Butorides atricapilla,
 Pelecaniformes,Ardeidae,Chinese Pond Heron,Ardeola bacchus,
 Pelecaniformes,Ardeidae,Western Cattle Egret,Ardea ibis,
+Pelecaniformes,Ardeidae,Eastern Cattle Egret,Ardea coromanda,
 Pelecaniformes,Ardeidae,Great Egret,Ardea alba,
 Pelecaniformes,Ardeidae,Medium Egret,Ardea intermedia,Intermediate Egret
 Pelecaniformes,Ardeidae,Grey Heron,Ardea cinerea,,Gray Heron
@@ -218,7 +225,9 @@ Falconiformes,Falconidae,Eurasian Hobby,Falco subbuteo,
 Falconiformes,Falconidae,Peregrine Falcon,Falco peregrinus,
 
 Psittaciformes,Cacatuidae,Yellow-crested Cockatoo,Cacatua sulphurea,
-Psittaciformes,Psittaculidae,Rose-ringed Parakeet,Psittacula krameri,
+
+Psittaciformes,Psittaculidae,Alexandrine Parakeet,Psittacula eupatria,
+Psittaciformes,Psittaculidae,Rose-ringed Parakeet,Psittacula krameri,Ring-necked Parakeet
 Psittaciformes,Psittaculidae,Monk Parakeet,Myiopsitta monachus,
 Psittaciformes,Psittaculidae,Red-masked Parakeet,Psittacara erythrogenys,
 
@@ -317,6 +326,8 @@ Passeriformes,Sylviidae,Greater Whitethroat,Curruca communis,
 Passeriformes,Sylviidae,Dartford Warbler,Curruca undata,
 
 Passeriformes,Zosteropidae,Swinhoe's White-eye,Zosterops simplex,
+
+Passeriformes,Timaliidae,Rufous-capped Babbler,Cyanoderma ruficeps,
 
 
 Passeriformes,Leiothrichidae,Huet's Fulvetta,Alcippe hueti,

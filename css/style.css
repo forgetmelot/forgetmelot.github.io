@@ -397,6 +397,9 @@ h2 {
   margin-bottom: 12px;
   line-height: 1.6;
 }
+.blog-content .species-section > p {
+  margin-bottom: 0;
+}
 
 .species-section {
   margin-top: 16px;

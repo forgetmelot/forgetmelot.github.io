@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
     Campephagidae: 'cuckooshrikes',
     Dicaeidae: 'flowerpeckers',
     Monarchidae: 'monarch flycatchers, paradise flycatchers, and shrikebills',
+    Jacanidae: 'jacanas',
+    Timaliidae: 'tree babblers, scimitar babblers, and friends'
   };
 
   var ORDER_SUBTEXTS = {
@@ -341,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function () {
         title: speciesName,
         scientific: row.scientific_name || '',
         otherNames: row.other_name || '',
-        hiddenSearchable: row['hidden searchable'] || row.hidden_searchable || ''
+        hiddenSearchable: row['hidden_searchable'] || row.hidden_searchable || ''
       };
     });
   }
@@ -942,7 +944,6 @@ function getBirdSearchText(bird) {
     bird.scientific_name,
     bird.other_name,
     bird.hidden_searchable,
-    bird['hidden searchable'],
   ]
     .filter(Boolean)
     .join(' ')
