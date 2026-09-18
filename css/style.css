@@ -65,6 +65,13 @@ h2 {
   justify-content: space-between;
   align-items: center;
 }
+.site-header:not(.site-header--bird) .nav-container {
+  height: 56px;
+  padding: 0 16px;
+}
+.site-header:not(.site-header--bird) {
+  height: 56px;
+}
 .back-link-container {
   margin-top: 20px;
 }
@@ -78,10 +85,19 @@ h2 {
   display: flex;
   gap: 16px;
 }
+.site-header:not(.site-header--bird) .site-nav .nav-list {
+  gap: 14px;
+}
 .site-nav a {
   color: #8f0e3d;
   text-transform: lowercase;
   padding: 6px 8px;
+}
+.site-header:not(.site-header--bird) .site-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
 }
 .site-nav a:hover {
   text-decoration: underline;
@@ -841,6 +857,9 @@ h2 {
   .note-line + .note-line::before {
     content: none;
   }
+  .about-faq-details p {
+    margin-right: 0;
+  }
 
   .site-title {
     font-size: 1.4rem;
@@ -861,6 +880,10 @@ h2 {
     overflow: hidden;
   }
 
+  .site-header:not(.site-header--bird) {
+    height: 76px;
+  }
+
   .site-header .nav-container,
   .site-header--bird .nav-container {
     width: 100%;
@@ -876,6 +899,11 @@ h2 {
     gap: 8px 10px;
   }
 
+  .site-header:not(.site-header--bird) .nav-container {
+    height: 76px;
+    padding: 10px 16px;
+  }
+
   .site-header .brand {
     display: inline-flex;
     flex-direction: column;
@@ -884,6 +912,36 @@ h2 {
     flex: 0 1 auto;
     min-width: 0;
     max-width: 36%;
+  }
+
+  .site-header:not(.site-header--bird) .nav-container::after {
+    content: '';
+    width: clamp(96px, 22vw, 120px);
+    max-width: 120px;
+    flex: 0 1 auto;
+    height: 34px;
+    order: 1;
+  }
+
+  .site-header:not(.site-header--bird) .site-nav {
+    order: 2;
+  }
+
+  .site-header:not(.site-header--bird) .site-nav .nav-list {
+    gap: 14px;
+  }
+
+  .site-header:not(.site-header--bird) .site-nav a {
+    display: flex;
+    line-height: 1;
+  }
+
+  .site-header:not(.site-header--bird) .site-nav a.lucky .nav-part {
+    text-align: center;
+  }
+
+  .site-header:not(.site-header--bird) .site-nav a.nav-link .nav-part + .nav-part {
+    margin-left: 0.25em;
   }
 
   .site-header .brand-part {
@@ -929,6 +987,10 @@ h2 {
   .site-header .site-nav a.nav-link {
     display: flex;
     flex-direction: column;
+  }
+
+  .site-header--bird .site-nav a.nav-link:not(.lucky) {
+    text-align: center;
   }
 
   .site-header .site-nav a.lucky {
