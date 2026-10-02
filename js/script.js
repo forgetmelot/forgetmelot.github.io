@@ -394,6 +394,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var existingContainer = document.querySelector('.back-link-container');
     if (existingContainer) {
       existingContainer.replaceWith(nav);
+    } else {
+      main.append(nav);
     }
   }
 
@@ -652,13 +654,24 @@ document.addEventListener('DOMContentLoaded', function () {
   renderStarRatings(document);
   renderBirdTags();
 
+  function updateBirdCount(total) {
+    var countElement = document.getElementById('bird-count');
+    if (!countElement) return;
+
+    countElement.textContent =
+      total + (total === 1 ? ' bird recorded' : ' birds recorded');
+  }
+
   var dataPromise = loadCatalogData();
 
   dataPromise.then(function (data) {
+    updateBirdCount(data.rows.length);
+
     if (data.rows.length) {
       renderCatalog(data.rows);
       addBirdPageNavigation(data.rows);
     }
+
     activateSearch(data.entries);
   });
 

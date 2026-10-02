@@ -43,6 +43,16 @@ h2 {
   color: #222222;
 }
 
+.site-title br {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .site-title br {
+    display: block;
+  }
+}
+
 
 /* desktop*/
 
@@ -1033,4 +1043,10 @@ h2 {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+.bird-count {
+  margin: -1rem 0 2rem;
+  font-size: 0.85rem;
+  text-align: center;
 }

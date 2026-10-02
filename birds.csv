@@ -214,6 +214,7 @@ Coraciiformes,Alcedinidae,Pied Kingfisher,Ceryle rudis,
 Piciformes,Megalaimidae,Great Barbet,Psilopogon virens,
 Piciformes,Megalaimidae,Chinese Barbet,Psilopogon faber,
 
+Piciformes,Picidae,Eurasian Wryneck,Jynx torquilla,
 Piciformes,Picidae,Middle Spotted Woodpecker,Dendrocoptes medius,
 Piciformes,Picidae,Great Spotted Woodpecker,Dendrocopos major,
 Piciformes,Picidae,Levaillant's Woodpecker,Picus vaillantii,Levaillant's Green Woodpecker
@@ -231,7 +232,7 @@ Psittaciformes,Psittaculidae,Rose-ringed Parakeet,Psittacula krameri,Ring-necked
 Psittaciformes,Psittaculidae,Monk Parakeet,Myiopsitta monachus,
 Psittaciformes,Psittaculidae,Red-masked Parakeet,Psittacara erythrogenys,
 
-
+Passeriformes,Campephagidae,Black-winged Cuckooshrike,Lalage melaschistos,
 Passeriformes,Campephagidae,Grey-chinned Minivet,Pericrocotus solaris,,Gray-chinned Minivet
 Passeriformes,Campephagidae,Scarlet Minivet,Pericrocotus speciosus,
 
@@ -293,6 +294,7 @@ Passeriformes,Cisticolidae,Zitting Cisticola,Cisticola juncidis,
 Passeriformes,Acrocephalidae,Eastern Olivaceous Warbler,Iduna pallida,
 Passeriformes,Acrocephalidae,Sedge Warbler,Acrocephalus schoenobaenus,
 Passeriformes,Acrocephalidae,Common Reed Warbler,Acrocephalus scirpaceus,
+Passeriformes,Acrocephalidae,Oriental Reed Warbler,Acrocephalus orientalis,
 
 Passeriformes,Hirundinidae,Sand Martin,Riparia riparia,Bank Swallow
 Passeriformes,Hirundinidae,Barn Swallow,Hirundo rustica,
@@ -309,6 +311,7 @@ Passeriformes,Pycnonotidae,Sooty-headed Bulbul,Pycnonotus aurigaster,
 
 
 Passeriformes,Phylloscopidae,Wood Warbler,Phylloscopus sibilatrix,
+Passeriformes,Phylloscopidae,Dusky Warbler,Phylloscopus fuscatus,
 Passeriformes,Phylloscopidae,Willow Warbler,Phylloscopus trochilus,
 Passeriformes,Phylloscopidae,Common Chiffchaff,Phylloscopus collybita,
 Passeriformes,Phylloscopidae,Pale-legged Leaf Warbler,Phylloscopus tenellipes,
@@ -383,6 +386,7 @@ Passeriformes,Muscicapidae,Common Redstart,Phoenicurus phoenicurus,
 Passeriformes,Muscicapidae,Black Redstart,Phoenicurus ochruros,
 Passeriformes,Muscicapidae,Blue Rock Thrush,Monticola solitarius,
 Passeriformes,Muscicapidae,European Stonechat,Saxicola rubicola,
+Passeriformes,Muscicapidae,Amur Stonechat,Saxicola stejnegeri,Stejneger's Stonechat
 Passeriformes,Muscicapidae,Northern Wheatear,Oenanthe oenanthe,
 Passeriformes,Muscicapidae,Atlas Wheatear,Oenanthe seebohmi,Seebohm's Wheatear
 Passeriformes,Muscicapidae,Desert Wheatear,Oenanthe deserti,
