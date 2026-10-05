@@ -659,7 +659,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!countElement) return;
 
     countElement.textContent =
-      total + (total === 1 ? ' bird recorded' : ' birds recorded');
+      total + (total === 1 ? ' bird identified' : ' birds identified');
   }
 
   var dataPromise = loadCatalogData();
