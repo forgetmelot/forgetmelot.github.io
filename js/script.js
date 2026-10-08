@@ -79,7 +79,9 @@ document.addEventListener('DOMContentLoaded', function () {
     Dicaeidae: 'flowerpeckers',
     Monarchidae: 'monarch flycatchers, paradise flycatchers, and shrikebills',
     Jacanidae: 'jacanas',
-    Timaliidae: 'tree babblers, scimitar babblers, and friends'
+    Timaliidae: 'tree babblers, scimitar babblers, and friends',
+    Locustellidae: 'grasshopper warblers, grassbirds, and friends',
+    Stenostiridae: 'fairy flycatchers',
   };
 
   var ORDER_SUBTEXTS = {
