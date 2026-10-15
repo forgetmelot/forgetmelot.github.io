@@ -98,6 +98,7 @@ Charadriiformes,Scolopacidae,Red-necked Phalarope,Phalaropus lobatus,
 Charadriiformes,Scolopacidae,Common Sandpiper,Actitis hypoleucos,
 Charadriiformes,Scolopacidae,Green Sandpiper,Tringa ochropus,
 Charadriiformes,Scolopacidae,Grey-tailed Tattler,Tringa brevipes,,Gray-tailed Tattler
+Charadriiformes,Scolopacidae,Marsh Sandpiper,Tringa stagnatilis,
 Charadriiformes,Scolopacidae,Wood Sandpiper,Tringa glareola,
 Charadriiformes,Scolopacidae,Common Redshank,Tringa totanus,
 Charadriiformes,Scolopacidae,Common Greenshank,Tringa nebularia,
@@ -178,15 +179,18 @@ Pelecaniformes,Ardeidae,Eastern Cattle Egret,Ardea coromanda,
 Pelecaniformes,Ardeidae,Great Egret,Ardea alba,
 Pelecaniformes,Ardeidae,Medium Egret,Ardea intermedia,Intermediate Egret
 Pelecaniformes,Ardeidae,Grey Heron,Ardea cinerea,,Gray Heron
+Pelecaniformes,Ardeidae,Purple Heron,Ardea purpurea,
 
 
 
 Pelecaniformes,Threskiornithidae,Glossy Ibis,Plegadis falcinellus,
 
+Accipitriformes,Accipitridae,Crested Honey Buzzard,Pernis ptilorhynchus,Oriental Honey Buzzard
 Accipitriformes,Accipitridae,Crested Serpent Eagle,Spilornis cheela,
 Accipitriformes,Accipitridae,Booted Eagle,Hieraaetus pennatus,
 Accipitriformes,Accipitridae,Eurasian Sparrowhawk,Accipiter nisus,
 Accipitriformes,Accipitridae,Western Marsh Harrier,Circus aeruginosus,
+Accipitriformes,Accipitridae,Eastern Marsh Harrier,Circus spilonotus,
 Accipitriformes,Accipitridae,Red Kite,Milvus milvus,
 Accipitriformes,Accipitridae,Black Kite,Milvus migrans,
 Accipitriformes,Accipitridae,White-tailed Eagle,Haliaeetus albicilla,
@@ -216,6 +220,7 @@ Piciformes,Megalaimidae,Great Barbet,Psilopogon virens,
 Piciformes,Megalaimidae,Chinese Barbet,Psilopogon faber,
 
 Piciformes,Picidae,Eurasian Wryneck,Jynx torquilla,
+Piciformes,Picidae,Speckled Piculet,Picmunus innominatus,
 Piciformes,Picidae,Middle Spotted Woodpecker,Dendrocoptes medius,
 Piciformes,Picidae,Great Spotted Woodpecker,Dendrocopos major,
 Piciformes,Picidae,Levaillant's Woodpecker,Picus vaillantii,Levaillant's Green Woodpecker
@@ -233,6 +238,8 @@ Psittaciformes,Psittaculidae,Rose-ringed Parakeet,Psittacula krameri,Ring-necked
 Psittaciformes,Psittaculidae,Monk Parakeet,Myiopsitta monachus,
 Psittaciformes,Psittaculidae,Red-masked Parakeet,Psittacara erythrogenys,
 
+Passeriformes,Pittidae,Fairy Pitta,Pitta nympha,
+
 Passeriformes,Campephagidae,Black-winged Cuckooshrike,Lalage melaschistos,
 Passeriformes,Campephagidae,Grey-chinned Minivet,Pericrocotus solaris,,Gray-chinned Minivet
 Passeriformes,Campephagidae,Scarlet Minivet,Pericrocotus speciosus,
@@ -246,6 +253,7 @@ Passeriformes,Dicruridae,Hair-crested Drongo,Dicrurus hottentottus,
 Passeriformes,Monarchidae,Amur Paradise Flycatcher,Terpsiphone incei,
 
 Passeriformes,Laniidae,Red-backed Shrike,Lanius collurio,
+Passeriformes,Laniidae,Brown Shrike,Lanius cristatus,
 Passeriformes,Laniidae,Long-tailed Shrike,Lanius schach,Dusky Shrike
 Passeriformes,Laniidae,Great Grey Shrike,Lanius excubitor,,Great Gray Shrike
 Passeriformes,Laniidae,Woodchat Shrike,Lanius senator,
@@ -301,6 +309,8 @@ Passeriformes,Acrocephalidae,Sedge Warbler,Acrocephalus schoenobaenus,
 Passeriformes,Acrocephalidae,Common Reed Warbler,Acrocephalus scirpaceus,
 Passeriformes,Acrocephalidae,Oriental Reed Warbler,Acrocephalus orientalis,
 
+Passeriformes,Locustellidae,Pallas's Grasshopper Warbler,Helopsaltes certhiola,
+Passeriformes,Locustellidae,Styan's Grasshopper Warbler,Helopsaltes pleskei,Pleske's Grasshopper Warbler
 Passeriformes,Locustellidae,Lanceolated Warbler,Locustella lanceolata,
 
 Passeriformes,Hirundinidae,Sand Martin,Riparia riparia,Bank Swallow
@@ -368,6 +378,7 @@ Passeriformes,Sturnidae,Spotless Starling,Sturnus unicolor,
 Passeriformes,Sturnidae,Black-collared Starling,Gracupica nigricollis,
 Passeriformes,Sturnidae,White-shouldered Starling,Sturnia sinensis,
 Passeriformes,Sturnidae,Common Myna,Acridotheres tristis,
+Passeriformes,Sturnidae,Great Myna,Acridotheres grandis,
 Passeriformes,Sturnidae,Crested Myna,Acridotheres cristatellus,
 
 Passeriformes,Turdidae,Mistle Thrush,Turdus viscivorus,
@@ -389,6 +400,7 @@ Passeriformes,Muscicapidae,European Robin,Erithacus rubecula,
 Passeriformes,Muscicapidae,Common Nightingale,Luscinia megarhynchos,
 Passeriformes,Muscicapidae,Blue Whistling Thrush,Myophonus caeruleus,
 Passeriformes,Muscicapidae,Yellow-rumped Flycatcher,Ficedula zanthopygia,
+Passeriformes,Muscicapidae,Taiga Flycatcher,Ficedula albicilla,
 Passeriformes,Muscicapidae,European Pied Flycatcher,Ficedula hypoleuca,
 Passeriformes,Muscicapidae,Moussier's Redstart,Phoenicurus moussieri,
 Passeriformes,Muscicapidae,Common Redstart,Phoenicurus phoenicurus,
@@ -424,8 +436,10 @@ Passeriformes,Motacillidae,Grey Wagtail,Motacilla cinerea,
 Passeriformes,Motacillidae,Western Yellow Wagtail,Motacilla flava,
 Passeriformes,Motacillidae,Eastern Yellow Wagtail,Motacilla tschutschensis,
 Passeriformes,Motacillidae,White Wagtail,Motacilla alba,Pied Wagtail
+Passeriformes,Motacillidae,Richard's Pipit,Anthus richardi,
 Passeriformes,Motacillidae,Meadow Pipit,Anthus pratensis,
 Passeriformes,Motacillidae,Tree Pipit,Anthus trivialis,
+Passeriformes,Motacillidae,Red-throated Pipit,Anthus cervinus,
 Passeriformes,Motacillidae,Rock Pipit,Anthus petrosus,
 
 Passeriformes,Fringillidae,Common Chaffinch,Fringilla coelebs,
@@ -442,7 +456,9 @@ Passeriformes,Fringillidae,Eurasian Siskin,Spinus spinus,
 
 Passeriformes,Calcariidae,Snow Bunting,Plectrophenax nivalis,
 
+Passeriformes,Emberizidae,Black-headed Bunting,Emberiza melanocephala,
 Passeriformes,Emberizidae,Corn Bunting,Emberiza calandra,
+Passeriformes,Emberizidae,Chestnut-eared Bunting,Emberiza fucata,
 Passeriformes,Emberizidae,Rock Bunting,Emberiza cia,
 Passeriformes,Emberizidae,Yellowhammer,Emberiza citrinella,
 Passeriformes,Emberizidae,House Bunting,Emberiza sahari,

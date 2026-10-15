@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Timaliidae: 'tree babblers, scimitar babblers, and friends',
     Locustellidae: 'grasshopper warblers, grassbirds, and friends',
     Stenostiridae: 'fairy flycatchers',
+    Pittidae: 'pittas',
   };
 
   var ORDER_SUBTEXTS = {
@@ -746,6 +747,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function createColorChip(hex) {
     const chip = document.createElement("span");
     chip.className = "color-chip";
+    chip.dataset.hex = hex;
+    chip.setAttribute("aria-label", hex);
 
     const label = document.createElement("span");
     label.className = "color-hex";
