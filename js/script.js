@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Locustellidae: 'grasshopper warblers, grassbirds, and friends',
     Stenostiridae: 'fairy flycatchers',
     Pittidae: 'pittas',
+    Pandionidae: 'osprey',
   };
 
   var ORDER_SUBTEXTS = {

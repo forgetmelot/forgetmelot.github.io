@@ -412,6 +412,10 @@ h2 {
   line-height: 1.6;
 }
 
+.lead > span {
+  white-space: nowrap;
+}
+
 .back-link {
   display: inline-block;
   margin-top: 8px;
@@ -497,6 +501,7 @@ h2 {
   background: transparent;
   border-radius: 0;
   color: #333;
+  line-height: 1.6;
   margin: 0 0 12px 0;
 }
 .rating-row[data-tags] .note-box {
