@@ -63,14 +63,14 @@ Caprimulgiformes,Caprimulgidae,Egyptian Nightjar,Caprimulgus aegyptius,
 Apodiformes,Apodidae,Common Swift,Apus apus,
 Apodiformes,Apodidae,Pallid Swift,Apus pallidus,
 Apodiformes,Apodidae,Pacific Swift,Apus pacificus,
-Apodiformes,Apodidae,Little Swift,Apus affinis,
-Apodiformes,Apodidae,House Swift,Apus nipalensis,
+Apodiformes,Apodidae,Little Swift,Apus affinis,House Swift
 
 Gruiformes,Gruidae,Common Crane,Grus grus,
 Gruiformes,Rallidae,Water Rail,Rallus aquaticus,
 Gruiformes,Rallidae,Eurasian Moorhen,Gallinula chloropus,Common Moorhen
 Gruiformes,Rallidae,Eurasian Coot,Fulica atra,
 Gruiformes,Rallidae,White-breasted Waterhen,Amaurornis phoenicurus,
+Gruiformes,Rallidae,Ruddy-breasted Crake,Zapornia fusca,
 Gruiformes,Rallidae,Baillon's Crake,Zapornia pusilla,
 
 
@@ -190,6 +190,7 @@ Accipitriformes,Pandionidae,Osprey,Pandion haliaetus,
 Accipitriformes,Accipitridae,Crested Honey Buzzard,Pernis ptilorhynchus,Oriental Honey Buzzard
 Accipitriformes,Accipitridae,Crested Serpent Eagle,Spilornis cheela,
 Accipitriformes,Accipitridae,Booted Eagle,Hieraaetus pennatus,
+Accipitriformes,Accipitridae,Besra,Tachyspiza virgata,
 Accipitriformes,Accipitridae,Eurasian Sparrowhawk,Accipiter nisus,
 Accipitriformes,Accipitridae,Western Marsh Harrier,Circus aeruginosus,
 Accipitriformes,Accipitridae,Eastern Marsh Harrier,Circus spilonotus,
@@ -199,6 +200,7 @@ Accipitriformes,Accipitridae,White-tailed Eagle,Haliaeetus albicilla,
 Accipitriformes,Accipitridae,White-bellied Sea Eagle,Icthyophaga leucogaster,
 Accipitriformes,Accipitridae,Common Buzzard,Buteo buteo,
 Accipitriformes,Accipitridae,Long-legged Buzzard,Buteo rufinus,
+Accipitriformes,Accipitridae,Eastern Buzzard,Buteo japonicus,
 
 Strigiformes,Tytonidae,Western Barn Owl,Tyto alba,
 
@@ -226,6 +228,7 @@ Piciformes,Picidae,Eurasian Wryneck,Jynx torquilla,
 Piciformes,Picidae,Speckled Piculet,Picmunus innominatus,
 Piciformes,Picidae,Middle Spotted Woodpecker,Dendrocoptes medius,
 Piciformes,Picidae,Great Spotted Woodpecker,Dendrocopos major,
+Piciformes,Picidae,Bay Woodpecker,Blythipicus pyrrhotis,
 Piciformes,Picidae,Levaillant's Woodpecker,Picus vaillantii,Levaillant's Green Woodpecker
 Piciformes,Picidae,Eurasian Green Woodpecker,Picus viridis,
 
@@ -243,16 +246,19 @@ Psittaciformes,Psittaculidae,Red-masked Parakeet,Psittacara erythrogenys,
 
 Passeriformes,Pittidae,Fairy Pitta,Pitta nympha,
 
-Passeriformes,Campephagidae,Black-winged Cuckooshrike,Lalage melaschistos,
 Passeriformes,Campephagidae,Grey-chinned Minivet,Pericrocotus solaris,,Gray-chinned Minivet
 Passeriformes,Campephagidae,Scarlet Minivet,Pericrocotus speciosus,
+Passeriformes,Campephagidae,Brown-rumped Minivet,Pericrocotus cantonensis,
+Passeriformes,Campephagidae,Black-winged Cuckooshrike,Lalage melaschistos,
 
 Passeriformes,Oriolidae,Eurasian Golden Oriole,Oriolus oriolus,
 Passeriformes,Oriolidae,Black-naped Oriole,Oriolus chinensis,
 
 Passeriformes,Dicruridae,Black Drongo,Dicrurus macrocercus,
+Passeriformes,Dicruridae,Ashy Drongo,Dicrurus leucophaeus,
 Passeriformes,Dicruridae,Hair-crested Drongo,Dicrurus hottentottus,
 
+Passeriformes,Monarchidae,Black-naped Monarch,Hypothymis azurea,
 Passeriformes,Monarchidae,Amur Paradise Flycatcher,Terpsiphone incei,
 
 Passeriformes,Laniidae,Red-backed Shrike,Lanius collurio,
@@ -308,6 +314,7 @@ Passeriformes,Cisticolidae,Common Tailorbird,Orthotomus sutorius,
 Passeriformes,Cisticolidae,Zitting Cisticola,Cisticola juncidis,Fan-tailed Warbler
 
 Passeriformes,Acrocephalidae,Eastern Olivaceous Warbler,Iduna pallida,
+Passeriformes,Acrocephalidae,Black-browed Reed Warbler,Acrocephalus bistrigiceps,
 Passeriformes,Acrocephalidae,Sedge Warbler,Acrocephalus schoenobaenus,
 Passeriformes,Acrocephalidae,Common Reed Warbler,Acrocephalus scirpaceus,
 Passeriformes,Acrocephalidae,Oriental Reed Warbler,Acrocephalus orientalis,
@@ -335,6 +342,7 @@ Passeriformes,Phylloscopidae,Yellow-browed Warbler,Phylloscopus inornatus,
 Passeriformes,Phylloscopidae,Dusky Warbler,Phylloscopus fuscatus,
 Passeriformes,Phylloscopidae,Willow Warbler,Phylloscopus trochilus,
 Passeriformes,Phylloscopidae,Common Chiffchaff,Phylloscopus collybita,
+Passeriformes,Phylloscopidae,Two-barred Warbler,Phylloscopus plumbeitarsus,
 Passeriformes,Phylloscopidae,Pale-legged Leaf Warbler,Phylloscopus tenellipes,
 Passeriformes,Phylloscopidae,Arctic Warbler,Phylloscopus borealis,
 
@@ -401,7 +409,7 @@ Passeriformes,Muscicapidae,Oriental Magpie-Robin,Copsychus saularis,
 Passeriformes,Muscicapidae,Hainan Blue Flycatcher,Cyornis hainanus,
 Passeriformes,Muscicapidae,European Robin,Erithacus rubecula,
 Passeriformes,Muscicapidae,Common Nightingale,Luscinia megarhynchos,
-Passeriformes,Muscicapidae,Blue Whistling Thrush,Myophonus caeruleus,
+Passeriformes,Muscicapidae,Chinese Whistling Thrush,Myophonus caeruleus,Blue Whistling Thrush
 Passeriformes,Muscicapidae,Yellow-rumped Flycatcher,Ficedula zanthopygia,
 Passeriformes,Muscicapidae,Taiga Flycatcher,Ficedula albicilla,Red-throated Flycatcher
 Passeriformes,Muscicapidae,European Pied Flycatcher,Ficedula hypoleuca,
