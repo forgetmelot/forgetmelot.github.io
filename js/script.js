@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Stenostiridae: 'fairy flycatchers',
     Pittidae: 'pittas',
     Pandionidae: 'osprey',
+    Sulidae: 'boobies and gannets',
   };
 
   var ORDER_SUBTEXTS = {
