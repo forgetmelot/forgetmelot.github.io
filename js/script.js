@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Pittidae: 'pittas',
     Pandionidae: 'osprey',
     Sulidae: 'boobies and gannets',
+    Vireonidae: 'shrike-babblers, erpornis, and vireos',
   };
 
   var ORDER_SUBTEXTS = {

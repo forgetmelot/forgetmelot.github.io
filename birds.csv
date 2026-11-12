@@ -22,7 +22,7 @@ Anseriformes,Anatidae,Chiloe Wigeon,Mareca sibilatrix,
 Anseriformes,Anatidae,Mallard,Anas platyrhynchos,
 Anseriformes,Anatidae,Northern Pintail,Anas acuta,
 Anseriformes,Anatidae,Green-winged Teal,Anas crecca,"Eurasian Teal, Common Teal"
-Anseriformes,Anatidae,Marbled Duck,Marmaronetta angustirostris,
+Anseriformes,Anatidae,Marbled Duck,Marmaronetta angustirostris,Marbled Teal
 Anseriformes,Anatidae,Red-crested Pochard,Netta rufina,
 Anseriformes,Anatidae,Common Pochard,Aythya ferina,
 Anseriformes,Anatidae,Ferruginous Duck,Aythya nyroca,
@@ -105,6 +105,7 @@ Charadriiformes,Scolopacidae,Grey-tailed Tattler,Tringa brevipes,,Gray-tailed Ta
 Charadriiformes,Scolopacidae,Marsh Sandpiper,Tringa stagnatilis,
 Charadriiformes,Scolopacidae,Wood Sandpiper,Tringa glareola,
 Charadriiformes,Scolopacidae,Common Redshank,Tringa totanus,
+Charadriiformes,Scolopacidae,Spotted Redshank,Tringa erythropus,
 Charadriiformes,Scolopacidae,Common Greenshank,Tringa nebularia,
 Charadriiformes,Scolopacidae,Ruddy Turnstone,Arenaria interpres,
 Charadriiformes,Scolopacidae,Broad-billed Sandpiper,Calidris falcinellus,
@@ -189,6 +190,9 @@ Pelecaniformes,Ardeidae,Purple Heron,Ardea purpurea,
 
 
 Pelecaniformes,Threskiornithidae,Glossy Ibis,Plegadis falcinellus,
+Pelecaniformes,Threskiornithidae,Eurasian Spoonbill,Platalea leucorodia,
+Pelecaniformes,Threskiornithidae,Black-faced Spoonbill,Platalea minor,
+
 
 Accipitriformes,Pandionidae,Osprey,Pandion haliaetus,
 
@@ -256,6 +260,8 @@ Passeriformes,Campephagidae,Grey-chinned Minivet,Pericrocotus solaris,,Gray-chin
 Passeriformes,Campephagidae,Scarlet Minivet,Pericrocotus speciosus,
 Passeriformes,Campephagidae,Brown-rumped Minivet,Pericrocotus cantonensis,
 Passeriformes,Campephagidae,Black-winged Cuckooshrike,Lalage melaschistos,
+
+Passeriformes,Vireonidae,White-bellied Erpornis,Erpornis zantholeuca,
 
 Passeriformes,Oriolidae,Eurasian Golden Oriole,Oriolus oriolus,
 Passeriformes,Oriolidae,Black-naped Oriole,Oriolus chinensis,
@@ -366,6 +372,7 @@ Passeriformes,Sylviidae,Dartford Warbler,Curruca undata,
 Passeriformes,Zosteropidae,Swinhoe's White-eye,Zosterops simplex,
 
 Passeriformes,Timaliidae,Rufous-capped Babbler,Cyanoderma ruficeps,
+Passeriformes,Timaliidae,Streak-breasted Scimitar Babbler,Pomatorhinus ruficollis,
 
 
 Passeriformes,Leiothrichidae,Huet's Fulvetta,Alcippe hueti,
@@ -385,7 +392,7 @@ Passeriformes,Sittidae,Eurasian Nuthatch,Sitta europaea,
 Passeriformes,Certhiidae,Eurasian Treecreeper,Certhia familiaris,
 Passeriformes,Certhiidae,Short-toed Treecreeper,Certhia brachydactyla,
 
-Passeriformes,Troglodytidae,Eurasian Wren,Troglodytes troglodytes,
+Passeriformes,Troglodytidae,Eurasian Wren,Nannus troglodytes,
 
 Passeriformes,Cinclidae,White-throated Dipper,Cinclus cinclus,
 
@@ -394,6 +401,8 @@ Passeriformes,Sturnidae,European Starling,Sturnus vulgaris,
 Passeriformes,Sturnidae,Spotless Starling,Sturnus unicolor,
 Passeriformes,Sturnidae,Black-collared Starling,Gracupica nigricollis,
 Passeriformes,Sturnidae,White-shouldered Starling,Sturnia sinensis,
+Passeriformes,Sturnidae,Red-billed Starling,Spodiopsar sericeus,
+Passeriformes,Sturnidae,White-cheeked Starling,Spodiopsar cineraceus,
 Passeriformes,Sturnidae,Common Myna,Acridotheres tristis,
 Passeriformes,Sturnidae,Great Myna,Acridotheres grandis,
 Passeriformes,Sturnidae,Crested Myna,Acridotheres cristatellus,
@@ -431,7 +440,7 @@ Passeriformes,Muscicapidae,Desert Wheatear,Oenanthe deserti,
 Passeriformes,Muscicapidae,Red-rumped Wheatear,Oenanthe moesta,
 Passeriformes,Muscicapidae,Black Wheatear,Oenanthe leucura,
 Passeriformes,Muscicapidae,White-crowned Wheatear,Oenanthe leucopyga,
-Passeriformes,Muscicapidae,Mourning Wheatear,Oenanthe lugens,Maghreb Wheatear
+Passeriformes,Muscicapidae,Maghreb Wheatear,Oenanthe halophila,
 
 Passeriformes,Dicaeidae,Fire-breasted Flowerpecker,Dicaeum ignipectus,
 Passeriformes,Dicaeidae,Scarlet-backed Flowerpecker,Dicaeum cruentatum,
@@ -475,12 +484,12 @@ Passeriformes,Fringillidae,Eurasian Siskin,Spinus spinus,
 
 Passeriformes,Calcariidae,Snow Bunting,Plectrophenax nivalis,
 
-Passeriformes,Emberizidae,Black-headed Bunting,Emberiza melanocephala,
+Passeriformes,Emberizidae,Black-headed Bunting,Melophus melanocephalus,
 Passeriformes,Emberizidae,Corn Bunting,Emberiza calandra,
 Passeriformes,Emberizidae,Chestnut-eared Bunting,Emberiza fucata,
 Passeriformes,Emberizidae,Rock Bunting,Emberiza cia,
 Passeriformes,Emberizidae,Yellowhammer,Emberiza citrinella,
-Passeriformes,Emberizidae,House Bunting,Emberiza sahari,
-Passeriformes,Emberizidae,Reed Bunting,Emberiza schoeniclus,
-Passeriformes,Emberizidae,Yellow-breasted Bunting,Emberiza aureola,
-Passeriformes,Emberizidae,Little Bunting,Emberiza pusilla,
+Passeriformes,Emberizidae,House Bunting,Fringillaria sahari,
+Passeriformes,Emberizidae,Reed Bunting,Schoeniclus schoeniclus,
+Passeriformes,Emberizidae,Yellow-breasted Bunting,Schoeniclus aureolus,
+Passeriformes,Emberizidae,Little Bunting,Schoeniclus pusillus,
